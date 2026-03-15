@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Frequently Asked Questions — All Your Needs Liberia. Customs brokerage, survey services, GIS, gold brokerage and more.">
+<title>FAQ | All Your Needs — Monrovia, Liberia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.faq-section { padding: var(--section-pad); background: var(--white); }
+.faq-layout { display: grid; grid-template-columns: 280px 1fr; gap: 60px; align-items: start; margin-top: 60px; }
+.faq-nav { position: sticky; top: 100px; }
+.faq-nav-title { font-family: var(--font-label); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.faq-nav-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.faq-nav-links a { display: block; padding: 10px 14px; font-size: 14px; color: var(--grey); text-decoration: none; border-radius: 6px; transition: var(--transition); border-left: 2px solid transparent; }
+.faq-nav-links a:hover { color: var(--navy); background: var(--off-white); border-left-color: var(--gold); }
+.faq-content { display: flex; flex-direction: column; gap: 48px; }
+.faq-group-title { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--gold); display: flex; align-items: center; gap: 12px; }
+.faq-group-icon { font-size: 24px; }
+.faq-items { display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: var(--off-white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.2s; }
+.faq-item.open { border-color: var(--gold); }
+.faq-question { width: 100%; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; font-weight: 600; color: var(--navy); background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-body); transition: var(--transition); }
+.faq-question:hover { color: var(--blue); }
+.faq-icon { width: 28px; height: 28px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; color: var(--gold); transition: transform 0.3s ease; border: 1px solid var(--border); }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-answer-inner { padding: 0 24px 20px; font-size: 14.5px; line-height: 1.75; color: #4A5568; }
+.faq-answer-inner strong { color: var(--navy); }
+.faq-answer-inner a { color: var(--blue); text-decoration: none; }
+.faq-answer-inner a:hover { text-decoration: underline; }
+
+/* Still have questions */
+.faq-cta { padding: var(--section-pad); background: var(--navy); position: relative; }
+.faq-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.faq-cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.contact-option { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 36px; transition: var(--transition); }
+.contact-option:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+.contact-option-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+.contact-option-title { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.contact-option-text { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 20px; }
+.contact-option-link { color: var(--gold); font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+.contact-option-link:hover { color: var(--gold-light); }
+
+@media (max-width: 900px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-nav { position: static; display: none; }
+  .faq-cta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">FAQ</span>
+    </div>
+    <span class="page-hero-label">Your Questions Answered</span>
+    <h1 class="page-hero-title">Frequently Asked<br><em>Questions</em></h1>
+    <p class="page-hero-sub">Everything you need to know about working with All Your Needs — our services, our licences, how we work, and how to get started.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-layout">
+
+      <!-- Side nav -->
+      <div class="faq-nav reveal">
+        <div class="faq-nav-title">Jump to Section</div>
+        <ul class="faq-nav-links">
+          <li><a href="#general">General</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#customs">Customs Brokerage</a></li>
+          <li><a href="#gold">Gold Brokerage</a></li>
+          <li><a href="#survey">Survey & Data</a></li>
+          <li><a href="#working">Working With Us</a></li>
+        </ul>
+      </div>
+
+      <!-- FAQ content -->
+      <div class="faq-content">
+
+        <!-- General -->
+        <div id="general" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">🏢</span> General</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What is All Your Needs?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">All Your Needs is a multi-service professional services firm incorporated in 2021 under the laws of the Republic of Liberia. We provide survey and data management, GIS and spatial data services, resettlement data management, customs brokerage, gold brokerage, digital data solutions, consulting, and business development services — all under one roof.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Where are you based and where do you operate?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Our headquarters is in Monrovia, Montserrado County, Republic of Liberia. Our survey and data operations cover all 15 counties of Liberia. We have also delivered international engagements in DRC, Zambia, and Angola, and are available for regional sub-contracts across West and Central Africa.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Who are your typical clients?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Our client base includes UN agencies (UNICEF, UNFPA, WFP, UN Women), international development finance institutions (World Bank, AfDB, EU), Liberian government ministries and agencies, international NGOs, environmental and social consultancies, infrastructure project developers, and private sector organisations operating in Liberia.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Is All Your Needs a registered Liberian company?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. All Your Needs is formally incorporated in the Republic of Liberia and operates in full compliance with Liberian commercial law. We hold government-issued licences for both Customs Brokerage and Gold Brokerage.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div id="services" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">⚙️</span> Services</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What services does All Your Needs offer?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">We offer eight core service lines: Survey & Data Collection, GIS & Spatial Data Services, Resettlement Data Management, Digital Data Solutions, Customs Brokerage (licensed), Gold Brokerage (licensed), Consulting & Advisory, and Business Development & Trade Facilitation. See our full <a href="services.html">Services page</a> for detailed descriptions.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Can you manage data collection projects outside Liberia?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. Our leadership team has managed data collection and resettlement data engagements in DRC, Zambia, and Angola. We are experienced in cross-border, multi-country operations under international safeguard standards including World Bank OP 4.12 and AfDB requirements.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Do you work as a sub-contractor to international firms?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes — and this is one of our most common engagement models. We regularly serve as the Liberian technical partner for international consultancies and development organisations who need local expertise, local presence, and local licences. If your firm is bidding on a Liberian project and needs a credible, licensed local sub-contractor, contact us.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customs -->
+        <div id="customs" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">🛃</span> Customs Brokerage</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What is a Customs Brokers Licence and what does yours cover?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">A Customs Brokers Licence is a government-issued authorisation to clear goods through Liberian ports and airport on behalf of clients. Our licence covers all Liberian seaports — Freeport of Monrovia, Port of Buchanan, Port of Greenville, and Port of Harper — as well as Roberts International Airport. We handle both import and export clearance.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Why should I use a licensed customs broker instead of handling clearance myself?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Customs clearance in Liberia requires professional knowledge of tariff classifications, LRA regulations, and documentation requirements. Using an unlicensed agent or attempting to self-clear can result in delays, fines, and seized goods. A licensed broker protects your cargo, ensures full legal compliance, and typically speeds up clearance significantly.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Do you handle time-sensitive or priority cargo?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. We offer priority clearance for time-sensitive shipments. Contact us directly at <a href="mailto:rerii@aynlr.com">rerii@aynlr.com</a> or call <a href="tel:+231777969916">+231 777 969 916</a> to discuss urgent cargo requirements.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Do you work with NGOs and international organisations on customs clearance?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. Many of our customs clients are international NGOs and development organisations bringing in programme equipment, vehicles, and supplies. We understand the specific documentation and exemption requirements that apply to these organisations and can advise on duty relief where applicable.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div id="gold" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">🥇</span> Gold Brokerage</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What does your Gold Brokers Licence authorise you to do?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Our Gold Brokers Licence, issued by the Government of Liberia, authorises All Your Needs to purchase gold from artisanal and small-scale miners for resale and export. All transactions are documented and fully compliant with the Minerals and Mining Act of Liberia.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Can you help international buyers source Liberian gold?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. International buyers who need a traceable, legally compliant Liberian gold supply chain can engage All Your Needs as their licensed broker. We manage the purchase, documentation, valuation, and facilitation of export — ensuring the buyer receives gold with a fully documented and compliant chain of custody.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">How are gold transactions documented?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Every transaction is fully documented with purchase receipts, weight and assay records, seller information, and compliance certificates as required by the Ministry of Mines and Energy. We prioritise transparency and can provide full transaction documentation to buyers on request.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Survey -->
+        <div id="survey" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">📊</span> Survey & Data</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What survey tools and software does your team use?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Our team works across the full range of professional survey tools: <strong>CSPro</strong> (CAPI application design, data entry, and processing), <strong>KoboCollect and ODK</strong> (XLSForm design including multilingual forms), <strong>ArcGIS Pro and QGIS</strong> (spatial data and field mapping), <strong>SPSS and Stata</strong> (statistical analysis), and <strong>PostgreSQL</strong> (survey database design and management).</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Can you design data collection tools in local languages?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. We regularly design multilingual XLSForms and CSPro applications for surveys conducted in English alongside local Liberian languages and dialects. Multilingual instrument design is a standard part of our service offering.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Do you provide field supervisors and enumerators?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. We have experience deploying and managing large field teams across all 15 Liberian counties — including training, supervision, daily monitoring, and quality control. For national-scale surveys we work with LISGIS's established field network.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What is a RAP and why does it require specialised data management?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">A Resettlement Action Plan (RAP) is a legally binding framework — required under World Bank, AfDB, and IFC performance standards — that ensures every person whose land, property, or livelihood is affected by an infrastructure project is identified, assessed, and fairly compensated. RAP data management requires specialised knowledge of safeguard standards, asset valuation methodologies, and the legal implications of data quality — any error can affect a family's compensation entitlement.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Working with us -->
+        <div id="working" class="reveal">
+          <div class="faq-group-title"><span class="faq-group-icon">🤝</span> Working With Us</div>
+          <div class="faq-items">
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">How do we start working with All Your Needs?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Contact us via the <a href="contact.html">Contact page</a> or email <a href="mailto:rerii@aynlr.com">rerii@aynlr.com</a> directly. Tell us about your project scope, timeline, and location. We will respond within 24 hours with an initial assessment and, if appropriate, arrange a consultation to discuss your specific requirements.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">Do you provide proposals for competitive bids and RFPs?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">Yes. We have extensive experience preparing technical proposals for NGO, UN, government, and development finance institution procurements. We can provide company profiles, CVs, past project references, and technical approach documents in formats required by major funders.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">What information should I bring when contacting you about a project?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">The more context you can provide, the better our initial response. Helpful details include: the type of service you need, the geographic coverage of the project, the timeline and deadline, the funder or client organisation, and any specific technical requirements. Even a rough outline is enough to get a useful initial response from us.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">How quickly do you respond to inquiries?<span class="faq-icon">+</span></button>
+              <div class="faq-answer"><div class="faq-answer-inner">We aim to respond to all inquiries within 24 hours on business days. For urgent matters — particularly time-sensitive customs clearance — call us directly on <a href="tel:+231777969916">+231 777 969 916</a>.</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end faq-content -->
+    </div><!-- end faq-layout -->
+  </div>
+</section>
+
+<!-- STILL HAVE QUESTIONS -->
+<section class="faq-cta">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;" class="reveal">
+      <span class="label" style="color:var(--gold);">Still Have Questions?</span>
+      <h2 class="section-title" style="color:var(--white);">We're Happy to Help</h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.6);max-width:520px;margin:0 auto;">Can't find the answer you're looking for? Reach us directly — we respond to all inquiries within 24 hours.</p>
+    </div>
+    <div class="faq-cta-grid reveal">
+      <div class="contact-option">
+        <span class="contact-option-icon">✉️</span>
+        <div class="contact-option-title">Send Us an Email</div>
+        <p class="contact-option-text">For general inquiries, project discussions, and proposal requests.</p>
+        <a href="mailto:info@aynlr.com" class="contact-option-link">info@aynlr.com →</a>
+      </div>
+      <div class="contact-option">
+        <span class="contact-option-icon">📞</span>
+        <div class="contact-option-title">Call Us Directly</div>
+        <p class="contact-option-text">For urgent matters including time-sensitive customs clearance.</p>
+        <a href="tel:+231777969916" class="contact-option-link">+231 777 969 916 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footerPlaceholder"></div>
+<script src="shared.js"></script>
+<script>
+injectNav('faq.html'); injectFooter(); initReveal();
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-answer').style.maxHeight = '0';
+  });
+  if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+}
+</script>
+</body>
+</html>

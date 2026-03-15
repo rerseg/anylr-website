@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="All Your Needs Case Studies — Real project results from survey data management, GIS, and resettlement data work across Liberia and Africa.">
+<title>Case Studies | All Your Needs — Monrovia, Liberia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.case-intro { padding: var(--section-pad); background: var(--white); }
+.case-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+/* Featured case study */
+.case-featured { padding: var(--section-pad); background: var(--navy-deep); position: relative; overflow: hidden; }
+.case-featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--gold), var(--blue), var(--gold)); }
+.case-featured-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.3); border-radius: 4px; padding: 5px 14px; margin-bottom: 24px; }
+.case-featured-tag span { font-family: var(--font-label); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+.case-featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.case-featured-title { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 46px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+.case-featured-body { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+.case-metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
+.case-metric { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 24px 16px; text-align: center; }
+.case-metric-num { font-family: var(--font-display); font-size: 38px; font-weight: 700; color: var(--gold); display: block; line-height: 1; margin-bottom: 8px; }
+.case-metric-label { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+/* Step cards */
+.step-cards { display: flex; flex-direction: column; gap: 16px; }
+.step-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 24px 28px; display: flex; gap: 20px; align-items: flex-start; transition: var(--transition); }
+.step-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(245,166,35,0.25); }
+.step-num { width: 38px; height: 38px; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+.step-title { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.step-text { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+/* Client portfolio */
+.portfolio { padding: var(--section-pad); background: var(--off-white); }
+.portfolio-table { width: 100%; border-collapse: collapse; margin-top: 40px; background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(26,43,74,0.08); }
+.portfolio-table th { background: var(--navy); color: var(--white); font-family: var(--font-label); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 16px 20px; text-align: left; font-weight: 600; }
+.portfolio-table th:last-child { text-align: center; }
+.portfolio-table td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text); line-height: 1.4; }
+.portfolio-table td:last-child { text-align: center; font-family: var(--font-label); font-size: 12px; letter-spacing: 0.5px; color: var(--grey); }
+.portfolio-table td:first-child { font-weight: 600; color: var(--navy); }
+.portfolio-table tr:last-child td { border-bottom: none; }
+.portfolio-table tr:nth-child(even) td { background: var(--off-white); }
+.portfolio-table tr:hover td { background: rgba(245,166,35,0.05); }
+
+/* Sectors */
+.sectors { padding: var(--section-pad); background: var(--white); }
+.sectors-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.sector-chip { background: var(--navy); border-radius: 8px; padding: 20px 16px; text-align: center; transition: var(--transition); }
+.sector-chip:hover { background: var(--blue); transform: translateY(-3px); }
+.sector-icon { font-size: 24px; display: block; margin-bottom: 10px; }
+.sector-name { font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.3; }
+
+@media (max-width: 900px) {
+  .case-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .case-featured-grid { grid-template-columns: 1fr; gap: 40px; }
+  .case-metrics-row { grid-template-columns: 1fr; }
+  .sectors-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-table { font-size: 13px; }
+  .portfolio-table td, .portfolio-table th { padding: 12px 14px; }
+}
+@media (max-width: 600px) {
+  .sectors-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="navPlaceholder"></div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">Case Studies</span>
+    </div>
+    <span class="page-hero-label">Proven Results</span>
+    <h1 class="page-hero-title">Real Projects.<br><em>Real Outcomes.</em></h1>
+    <p class="page-hero-sub">Our work speaks for itself. Here is a selection of engagements delivered by the All Your Needs team — across Liberia, the sub-region, and internationally.</p>
+  </div>
+</div>
+
+<!-- FEATURED CASE STUDY -->
+<section class="case-featured">
+  <div class="container">
+    <div class="reveal">
+      <div class="case-featured-tag"><span>Featured Case Study</span></div>
+    </div>
+    <div class="case-featured-grid">
+      <div class="reveal">
+        <h2 class="case-featured-title">Resettlement Action Plan Data Management — Cross-Border Infrastructure Project</h2>
+        <p class="case-featured-body">A leading international environmental and social consultancy engaged All Your Needs to manage the complete data lifecycle for a major toll road RAP spanning two countries in Central and Southern Africa — covering 762 Project-Affected Persons under tight deadlines and challenging field conditions.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Start a Similar Project</a>
+          <a href="services.html#resettlement" class="btn btn-white">Our RAP Services</a>
+        </div>
+        <div class="case-metrics-row">
+          <div class="case-metric"><span class="case-metric-num">762</span><div class="case-metric-label">Project-Affected Persons Profiled</div></div>
+          <div class="case-metric"><span class="case-metric-num">2</span><div class="case-metric-label">Countries Covered</div></div>
+          <div class="case-metric"><span class="case-metric-num">100%</span><div class="case-metric-label">Delivered On Schedule</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;">
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px;"><div style="font-size:11px;font-family:var(--font-label);letter-spacing:1px;color:var(--gold);margin-bottom:4px;">REGION</div><div style="font-size:14px;color:var(--white);font-weight:500;">Central & Southern Africa</div></div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px;"><div style="font-size:11px;font-family:var(--font-label);letter-spacing:1px;color:var(--gold);margin-bottom:4px;">YEAR</div><div style="font-size:14px;color:var(--white);font-weight:500;">2024</div></div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px;"><div style="font-size:11px;font-family:var(--font-label);letter-spacing:1px;color:var(--gold);margin-bottom:4px;">CLIENT TYPE</div><div style="font-size:14px;color:var(--white);font-weight:500;">International Consultancy</div></div>
+          <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:14px 16px;"><div style="font-size:11px;font-family:var(--font-label);letter-spacing:1px;color:var(--gold);margin-bottom:4px;">STANDARD</div><div style="font-size:14px;color:var(--white);font-weight:500;">World Bank Safeguards</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div style="margin-bottom:12px;font-family:var(--font-label);font-size:11px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;">How We Delivered</div>
+        <div class="step-cards">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div><div class="step-title">The Challenge</div><div class="step-text">Tight deadlines, cross-border field teams, unreliable network connectivity in remote areas, and a mid-project expansion of required data indicators by the client.</div></div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div><div class="step-title">Tools Designed</div><div class="step-text">Built customised KoboCollect instruments tailored to RAP indicators. Implemented offline capture protocols for areas without connectivity. Deployed supplementary tool mid-project for missing indicators.</div></div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div><div class="step-title">Field Management</div><div class="step-text">Monitored all incoming submissions daily. Directed field teams back to specific households for corrections. Applied analytical inference for derivable indicators — all documented and verified.</div></div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <div><div class="step-title">The Outcome</div><div class="step-text">Complete, clean, verified dataset for all 762 PAPs delivered on schedule — forming the legal foundation for compensation decisions affecting hundreds of families across two countries.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT PORTFOLIO TABLE -->
+<section class="portfolio">
+  <div class="container">
+    <div class="reveal">
+      <span class="label">Selected Project Portfolio</span>
+      <h2 class="section-title">100+ Projects. 13+ Years. One Team.</h2>
+      <p class="section-body" style="max-width:620px;">The following is a selection of engagements delivered by the All Your Needs leadership team across government, UN agencies, international NGOs, and development finance institutions.</p>
+    </div>
+    <table class="portfolio-table reveal">
+      <thead>
+        <tr>
+          <th>Client / Organisation</th>
+          <th>Project</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ERM / World Bank</td><td>Kasomeno-Mwenda Toll Road RAP — DRC & Zambia</td><td>2024</td></tr>
+        <tr><td>ERM / Angola</td><td>P-RCAP 200kV Transmission Line — Resettlement Data Management</td><td>2025</td></tr>
+        <tr><td>LISGIS</td><td>Household Income & Expenditure Survey (HIES)</td><td>2025</td></tr>
+        <tr><td>LISGIS</td><td>Agriculture Income, Labour & Productivity Survey</td><td>2024</td></tr>
+        <tr><td>LISGIS</td><td>National Agricultural Census</td><td>2023</td></tr>
+        <tr><td>LISGIS</td><td>National Population & Housing Census</td><td>2022</td></tr>
+        <tr><td>Ministry of Health, Liberia</td><td>Reproductive Health Commodities & Services Survey</td><td>2025</td></tr>
+        <tr><td>Ministry of Health, Liberia</td><td>Harmonised Health Facility Assessment</td><td>2023</td></tr>
+        <tr><td>Ministry of Health, Liberia</td><td>WHO STEPWISE Survey</td><td>2022</td></tr>
+        <tr><td>LISGIS / UNFPA</td><td>Liberia Demographic and Health Survey (LDHS)</td><td>2019</td></tr>
+        <tr><td>World Food Programme</td><td>Comprehensive Food Security & Nutrition Survey</td><td>2018</td></tr>
+        <tr><td>Diffusion Inc. / AfDB</td><td>Sanniquellie–Loguatuo Coastal Highway — RAP Data Management</td><td>2017–18</td></tr>
+        <tr><td>Diffusion Inc. / World Bank</td><td>LACEEP Electricity Expansion — Structure & RAP Assessment</td><td>2018</td></tr>
+        <tr><td>Diffusion Inc. / AfDB</td><td>Fish Town–Harper Road — RAP Update & ESIA Support</td><td>2017</td></tr>
+        <tr><td>Ministry of Finance & Planning</td><td>Public Expenditure Tracking Survey — Multiple Sectors</td><td>2017–25</td></tr>
+        <tr><td>National Elections Commission</td><td>Voter Registration & Election Monitoring — Multiple Rounds</td><td>2017–23</td></tr>
+        <tr><td>World Bank / WFP (EPAG)</td><td>Early Childhood Development Surveys (5 consecutive rounds)</td><td>2019–23</td></tr>
+        <tr><td>UN Women</td><td>Women's Empowerment in Agriculture Index (WEAI)</td><td>2019–21</td></tr>
+        <tr><td>UNICEF</td><td>IDP Camps WASH Assessment Survey</td><td>2011</td></tr>
+        <tr><td>UNFPA</td><td>Liberia Demographic and Health Survey</td><td>2007</td></tr>
+        <tr><td>Red Cross</td><td>Canadian Epidemiology Services Endline Survey</td><td>2016</td></tr>
+        <tr><td>Central Bank of Liberia</td><td>Financial Inclusion Survey</td><td>2021–22</td></tr>
+        <tr><td>IREDD</td><td>African Peer Review Mechanism Survey</td><td>2017</td></tr>
+        <tr><td>Ministry of Health, Liberia</td><td>Service Availability and Readiness Assessment (SARA)</td><td>2016–18</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sectors">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <span class="label">Industries We Serve</span>
+      <h2 class="section-title">Sectors We Work In</h2>
+    </div>
+    <div class="sectors-grid">
+      <div class="sector-chip reveal reveal-delay-1"><span class="sector-icon">🏥</span><span class="sector-name">Health & Social Services</span></div>
+      <div class="sector-chip reveal reveal-delay-2"><span class="sector-icon">📊</span><span class="sector-name">National Statistics & Census</span></div>
+      <div class="sector-chip reveal reveal-delay-3"><span class="sector-icon">🏗️</span><span class="sector-name">Infrastructure & Real Estate</span></div>
+      <div class="sector-chip reveal reveal-delay-4"><span class="sector-icon">🌍</span><span class="sector-name">NGOs & Development</span></div>
+      <div class="sector-chip reveal reveal-delay-1"><span class="sector-icon">🏛️</span><span class="sector-name">Government & Public Sector</span></div>
+      <div class="sector-chip reveal reveal-delay-2"><span class="sector-icon">⛏️</span><span class="sector-name">Mining & Natural Resources</span></div>
+      <div class="sector-chip reveal reveal-delay-3"><span class="sector-icon">🌾</span><span class="sector-name">Agriculture & Food Security</span></div>
+      <div class="sector-chip reveal reveal-delay-4"><span class="sector-icon">🏦</span><span class="sector-name">Finance & Banking</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--gold);padding:80px 24px;text-align:center;">
+  <div class="container">
+    <h2 style="font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--navy);margin-bottom:16px;">Have a Project in Mind?</h2>
+    <p style="font-size:16px;color:rgba(26,43,74,0.7);margin-bottom:32px;">Tell us about your project and we will respond within 24 hours.</p>
+    <a href="contact.html" class="btn btn-dark">Start a Conversation →</a>
+  </div>
+</div>
+
+<div id="footerPlaceholder"></div>
+<script src="shared.js"></script>
+<script>injectNav('case-studies.html'); injectFooter(); initReveal();</script>
+</body>
+</html>
