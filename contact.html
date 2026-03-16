@@ -217,9 +217,26 @@
 <script src="shared.js"></script>
 <script>
 injectNav('contact.html'); injectFooter(); initReveal();
-function submitForm() {
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('thankYou').style.display = 'block';
+async function submitForm(){
+  const form = document.getElementById('contactForm');
+  const thanks = document.getElementById('thankYou');
+  const btn = form.querySelector('.form-submit');
+  const origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const inputs = form.querySelectorAll('input,select,textarea');
+  const labels = form.querySelectorAll('.form-label');
+  const data = {};
+  inputs.forEach((el,i) => { if(labels[i]) data[labels[i].textContent.trim()] = el.value; });
+  try {
+    const res = await fetch('https://formspree.io/f/mlgpwqzd', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(res.ok){ form.style.display='none'; thanks.style.display='block'; }
+    else { btn.textContent = origText; btn.disabled = false; alert('Something went wrong. Email us at rerii@aynlr.com'); }
+  } catch(e) { btn.textContent = origText; btn.disabled = false; alert('Connection error. Email rerii@aynlr.com directly.'); }
 }
 </script>
 </body>

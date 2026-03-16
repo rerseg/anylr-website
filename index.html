@@ -598,7 +598,27 @@ function tFaq(btn){
   document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});
   if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
 }
-function submitForm(){document.getElementById('cForm').style.display='none';document.getElementById('cThanks').style.display='block';}
+async function submitForm(){
+  const form = document.getElementById('cForm');
+  const thanks = document.getElementById('cThanks');
+  const btn = form.querySelector('.fsub');
+  const origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  const inputs = form.querySelectorAll('input,select,textarea');
+  const labels = form.querySelectorAll('.fl');
+  const data = {};
+  inputs.forEach((el,i) => { if(labels[i]) data[labels[i].textContent.trim()] = el.value; });
+  try {
+    const res = await fetch('https://formspree.io/f/mlgpwqzd', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    });
+    if(res.ok){ form.style.display='none'; thanks.style.display='block'; }
+    else { btn.textContent = origText; btn.disabled = false; alert('Something went wrong. Email us at rerii@aynlr.com'); }
+  } catch(e) { btn.textContent = origText; btn.disabled = false; alert('Connection error. Email rerii@aynlr.com directly.'); }
+}
 </script>
 </body>
 </html>
