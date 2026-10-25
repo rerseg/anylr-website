@@ -1,624 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="All Your Needs — Liberia's premier multi-service professional firm. Survey & Data Services, GIS Mapping, Customs Brokerage, Gold Brokerage, and more.">
-<meta property="og:title" content="All Your Needs — Where Necessity Meets Innovation">
-<meta property="og:url" content="https://www.aynlr.com">
-<title>All Your Needs | Where Necessity Meets Innovation — Monrovia, Liberia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All Your Needs Inc.</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="RERII">
+<meta name="description" content="All Your Needs Incorporated: survey, GIS, digital data, customs and gold brokerage services in Liberia.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;font-size:16px;}
-:root{
-  --navy:#0D1A2E;--navy2:#0A1422;--navy3:#111E33;
-  --blue:#0077C8;--blue2:#1A8FE3;
-  --gold:#F5A623;--gold2:#FFB830;
-  --white:#FFFFFF;
-  --dim:rgba(255,255,255,0.55);--dimmer:rgba(255,255,255,0.3);
-  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.12);
-  --card:rgba(255,255,255,0.04);--card2:rgba(255,255,255,0.07);
-  --max-w:1180px;
-  --font-d:'Cormorant Garamond',Georgia,serif;
-  --font-b:'Outfit',sans-serif;
-  --font-l:'Barlow Condensed',sans-serif;
-  --ease:cubic-bezier(0.4,0,0.2,1);
-}
-body{font-family:var(--font-b);background:var(--navy);color:var(--white);overflow-x:hidden;}
-.container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
-::-webkit-scrollbar{width:5px;}
-::-webkit-scrollbar-track{background:var(--navy2);}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px;}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes glow{0%,100%{opacity:0.5;}50%{opacity:1;}}
-@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s var(--ease),transform 0.65s var(--ease);}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 32px;transition:background 0.4s,backdrop-filter 0.4s;}
-nav.scrolled{background:rgba(10,20,34,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.nav-inner{max-width:var(--max-w);margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-logo-mark{width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--blue) 0%,var(--navy3) 100%);border:1px solid rgba(0,119,200,0.5);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--white);position:relative;overflow:hidden;}
-.nav-logo-mark::after{content:'';position:absolute;top:-5px;right:-5px;width:13px;height:13px;background:var(--gold);border-radius:50%;opacity:0.9;}
-.nav-logo-name{font-size:15px;font-weight:600;color:var(--white);}
-.nav-logo-dot{color:var(--gold);}
-.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
-.nav-links a{font-size:13.5px;font-weight:500;color:var(--dim);text-decoration:none;padding:8px 14px;border-radius:8px;transition:all 0.2s;}
-.nav-links a:hover{color:var(--white);background:var(--card2);}
-.nav-btn{background:var(--gold);color:var(--navy);font-size:13.5px;font-weight:700;padding:9px 22px;border-radius:8px;text-decoration:none;transition:all 0.2s;}
-.nav-btn:hover{background:var(--gold2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,166,35,0.35);}
-.nav-mob{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
-.nav-mob span{display:block;width:22px;height:2px;background:var(--white);}
-
-/* HERO */
-#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 24px 60px;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,119,200,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 50% 100%,rgba(245,166,35,0.06) 0%,transparent 60%),var(--navy2);}
-#hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 30%,transparent 80%);}
-.hero-glow{position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse at 50% 50%,rgba(0,119,200,0.25) 0%,transparent 70%);animation:glow 4s ease infinite;pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:100px;padding:6px 16px;margin-bottom:32px;animation:fadeIn 0.8s forwards;}
-.hero-badge-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 8px var(--gold);animation:pulse 2s ease infinite;}
-.hero-badge span{font-family:var(--font-l);font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);}
-.hero-title{font-family:var(--font-d);font-size:clamp(52px,8vw,96px);font-weight:700;line-height:1.02;text-align:center;color:var(--white);margin-bottom:24px;animation:fadeUp 0.9s var(--ease) 0.1s both;max-width:900px;letter-spacing:-1px;}
-.hero-title em{color:var(--gold);font-style:italic;}
-.hero-sub{font-size:17px;line-height:1.7;color:var(--dim);text-align:center;max-width:540px;margin-bottom:40px;animation:fadeUp 0.9s var(--ease) 0.2s both;}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:56px;animation:fadeUp 0.9s var(--ease) 0.3s both;}
-.cta-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:14.5px;padding:14px 32px;border-radius:10px;text-decoration:none;transition:all 0.25s;}
-.cta-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(245,166,35,0.35);}
-.cta-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--card2);color:var(--white);font-weight:500;font-size:14.5px;padding:14px 32px;border-radius:10px;text-decoration:none;border:1px solid var(--border2);transition:all 0.25s;}
-.cta-secondary:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);}
-.hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;margin-bottom:72px;animation:fadeUp 0.9s var(--ease) 0.4s both;}
-.trust-div{width:1px;height:20px;background:var(--border2);}
-.trust-label{font-size:12px;color:var(--dimmer);}
-.trust-logos{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
-.trust-logo{font-size:12px;font-weight:600;color:var(--dimmer);padding:5px 12px;border:1px solid var(--border);border-radius:6px;transition:all 0.2s;}
-.trust-logo:hover{color:var(--white);border-color:var(--border2);}
-
-/* MOCKUP */
-.hero-mockup-wrap{width:100%;max-width:900px;position:relative;animation:fadeUp 1s var(--ease) 0.45s both;}
-.hero-mockup-wrap::before{content:'';position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:70%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.hero-mockup{background:rgba(10,18,30,0.95);border:1px solid var(--border2);border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,0.6),0 0 0 1px var(--border);}
-.mockup-bar{background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
-.mockup-dots{display:flex;gap:6px;}
-.mockup-dot{width:10px;height:10px;border-radius:50%;}
-.dot-r{background:#FF5F57;}.dot-y{background:#FFBD2E;}.dot-g{background:#28C840;}
-.mockup-bar-title{font-size:12px;color:var(--dimmer);font-family:var(--font-l);letter-spacing:1px;}
-.mockup-body{display:grid;grid-template-columns:155px 1fr;min-height:320px;}
-.mockup-sidebar{border-right:1px solid var(--border);padding:18px 12px;display:flex;flex-direction:column;gap:3px;}
-.sb-brand{display:flex;align-items:center;gap:8px;padding:8px 8px 14px;}
-.sb-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;box-shadow:0 0 6px var(--gold);}
-.sb-name{font-size:13px;font-weight:600;color:var(--white);}
-.sb-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:6px;font-size:12px;color:var(--dim);cursor:pointer;transition:all 0.15s;}
-.sb-item:hover,.sb-item.on{background:var(--card2);color:var(--white);}
-.sb-item.on{color:var(--gold);}
-.sb-badge{margin-left:auto;background:var(--gold);color:var(--navy);font-size:9px;font-weight:700;padding:1px 5px;border-radius:3px;}
-.mockup-main{padding:18px;display:flex;flex-direction:column;gap:14px;}
-.m-row{display:grid;gap:12px;}
-.m-row.c3{grid-template-columns:repeat(3,1fr);}
-.m-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:14px;}
-.m-label{font-size:9.5px;font-family:var(--font-l);letter-spacing:1.5px;text-transform:uppercase;color:var(--dimmer);margin-bottom:5px;}
-.m-val{font-family:var(--font-d);font-size:24px;font-weight:700;color:var(--white);line-height:1;}
-.m-val.g{color:var(--gold);}.m-val.b{color:var(--blue2);}
-.m-ch{font-size:10.5px;margin-top:3px;}
-.m-ch.up{color:#4ADE80;}.m-ch.nt{color:var(--dim);}
-.m-chart{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px 14px 8px;}
-.m-chart-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
-.m-chart-t{font-size:11.5px;font-weight:600;color:var(--white);}
-.m-tabs{display:flex;gap:3px;}
-.m-tab{font-size:10px;padding:2px 7px;border-radius:3px;color:var(--dimmer);font-family:var(--font-l);letter-spacing:0.5px;cursor:pointer;}
-.m-tab.on{background:var(--gold);color:var(--navy);font-weight:700;}
-.m-table{background:var(--card);border:1px solid var(--border);border-radius:9px;overflow:hidden;}
-.m-thead{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:9px 13px;border-bottom:1px solid var(--border);font-size:9.5px;font-family:var(--font-l);letter-spacing:1px;color:var(--dimmer);text-transform:uppercase;}
-.m-trow{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:8px 13px;border-bottom:1px solid var(--border);font-size:11px;color:var(--dim);align-items:center;transition:background 0.15s;}
-.m-trow:last-child{border-bottom:none;}
-.m-trow:hover{background:var(--card2);}
-.m-tname{display:flex;align-items:center;gap:7px;font-weight:600;color:var(--white);}
-.m-tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-.td-g{background:var(--gold);}.td-b{background:var(--blue2);}.td-t{background:#2DD4BF;}
-.m-status{display:inline-flex;padding:2px 7px;border-radius:3px;font-size:10px;font-weight:600;}
-.s-done{background:rgba(74,222,128,0.12);color:#4ADE80;}
-.s-act{background:rgba(0,119,200,0.15);color:var(--blue2);}
-.s-pend{background:rgba(245,166,35,0.12);color:var(--gold);}
-
-/* STATS */
-#stats{padding:0 24px;position:relative;z-index:2;margin-top:-1px;}
-.stats-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--border2);border-radius:14px;background:rgba(10,18,30,0.85);backdrop-filter:blur(20px);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.4);}
-.stat-i{padding:28px 20px;border-right:1px solid var(--border);text-align:center;transition:background 0.2s;cursor:default;}
-.stat-i:last-child{border-right:none;}
-.stat-i:hover{background:var(--card2);}
-.stat-num{font-family:var(--font-d);font-size:38px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:6px;display:block;}
-.stat-lbl{font-size:12px;color:var(--dim);line-height:1.4;}
-
-/* SERVICES */
-#services{padding:120px 24px;background:var(--navy2);position:relative;overflow:hidden;}
-#services::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,119,200,0.07) 0%,transparent 70%);pointer-events:none;}
-.eyebrow{font-family:var(--font-l);font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;}
-.sec-title{font-family:var(--font-d);font-size:clamp(34px,4.5vw,54px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:14px;}
-.sec-title em{color:var(--gold);font-style:italic;}
-.sec-sub{font-size:16px;color:var(--dim);line-height:1.7;max-width:520px;}
-.sec-hdr{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px;}
-.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.svc-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:26px 20px;transition:all 0.25s var(--ease);position:relative;overflow:hidden;}
-.svc-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--blue2));transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
-.svc-card:hover{background:var(--card2);border-color:var(--border2);transform:translateY(-4px);}
-.svc-card:hover::before{transform:scaleX(1);}
-.svc-card.lic{background:rgba(0,119,200,0.06);border-color:rgba(0,119,200,0.18);}
-.svc-n{font-family:var(--font-d);font-size:40px;font-weight:700;color:rgba(255,255,255,0.05);line-height:1;margin-bottom:12px;display:block;}
-.svc-ico{font-size:26px;display:block;margin-bottom:12px;}
-.svc-t{font-size:15px;font-weight:700;color:var(--white);margin-bottom:7px;line-height:1.3;}
-.svc-d{font-size:13px;line-height:1.6;color:var(--dim);}
-.svc-bdg{display:inline-block;margin-top:10px;font-family:var(--font-l);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:4px;padding:2px 7px;}
-
-/* WORK */
-#work{padding:120px 24px;background:var(--navy);position:relative;overflow:hidden;}
-#work::after{content:'';position:absolute;bottom:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,166,35,0.05) 0%,transparent 70%);pointer-events:none;}
-.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.work-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);border-radius:6px;padding:5px 13px;margin-bottom:22px;}
-.work-tag span{font-family:var(--font-l);font-size:11px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;}
-.work-title{font-family:var(--font-d);font-size:clamp(30px,3.5vw,46px);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:18px;}
-.work-body{font-size:15px;line-height:1.8;color:var(--dim);margin-bottom:28px;}
-.work-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;}
-.wm{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 12px;text-align:center;transition:all 0.2s;}
-.wm:hover{background:var(--card2);transform:translateY(-3px);}
-.wm-num{font-family:var(--font-d);font-size:34px;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:5px;}
-.wm-lbl{font-size:11.5px;color:var(--dim);line-height:1.4;}
-.work-steps{display:flex;flex-direction:column;gap:12px;}
-.ws{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start;transition:all 0.2s;}
-.ws:hover{background:var(--card2);border-color:var(--border2);}
-.ws-c{width:34px;height:34px;border-radius:50%;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:15px;font-weight:700;color:var(--gold);flex-shrink:0;}
-.ws-h{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px;}
-.ws-p{font-size:13px;color:var(--dim);line-height:1.6;}
-
-/* TEAM */
-#team{padding:120px 24px;background:var(--navy2);}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
-.team-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.25s;}
-.team-card:hover{transform:translateY(-5px);border-color:var(--border2);box-shadow:0 20px 48px rgba(0,0,0,0.4);}
-.tc-top{height:96px;background:linear-gradient(135deg,var(--navy3) 0%,#182840 100%);display:flex;align-items:center;justify-content:center;position:relative;}
-.tc-top::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);}
-.tc-init{font-family:var(--font-d);font-size:34px;font-weight:700;color:rgba(255,255,255,0.75);}
-.tc-body{padding:16px;}
-.tc-name{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px;}
-.tc-role{font-family:var(--font-l);font-size:10px;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:9px;}
-.tc-bio{font-size:12px;line-height:1.6;color:var(--dim);}
-
-/* PIPELINE */
-#pipeline{padding:120px 24px;background:var(--navy3);}
-.pl-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px;}
-.pl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:34px;position:relative;overflow:hidden;transition:all 0.25s;}
-.pl-card:hover{background:var(--card2);border-color:var(--border2);transform:translateY(-4px);}
-.pl-soon{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-family:var(--font-l);font-size:9.5px;letter-spacing:1.5px;font-weight:700;padding:3px 10px;border-radius:4px;}
-.pl-ico{font-size:34px;margin-bottom:14px;display:block;}
-.pl-t{font-size:19px;font-weight:700;color:var(--white);margin-bottom:9px;}
-.pl-d{font-size:14px;line-height:1.7;color:var(--dim);}
-
-/* FAQ */
-#faq{padding:120px 24px;background:var(--navy);}
-.faq-lay{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start;}
-.faq-left{position:sticky;top:100px;}
-.faq-items{display:flex;flex-direction:column;gap:10px;}
-.faq-item{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color 0.2s;}
-.faq-item.open{border-color:rgba(245,166,35,0.35);}
-.faq-q{width:100%;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:14.5px;font-weight:600;color:var(--white);background:none;border:none;cursor:pointer;text-align:left;font-family:var(--font-b);transition:color 0.2s;}
-.faq-q:hover{color:var(--gold);}
-.faq-ico{width:26px;height:26px;border-radius:50%;background:var(--card2);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold);flex-shrink:0;transition:transform 0.3s;}
-.faq-item.open .faq-ico{transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease);}
-.faq-ai{padding:0 20px 16px;font-size:14px;line-height:1.75;color:var(--dim);}
-
-/* CONTACT */
-#contact{padding:120px 24px;background:var(--navy2);position:relative;overflow:hidden;}
-#contact::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.cd-list{display:flex;flex-direction:column;gap:16px;margin-bottom:36px;}
-.cd-item{display:flex;align-items:flex-start;gap:13px;}
-.cd-ico{width:44px;height:44px;border-radius:10px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.cd-lbl{font-family:var(--font-l);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
-.cd-val{font-size:14.5px;color:var(--white);font-weight:500;}
-.cd-val a{color:var(--white);text-decoration:none;transition:color 0.2s;}
-.cd-val a:hover{color:var(--gold);}
-.form-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:38px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
-.fg{margin-bottom:16px;}
-.fl{display:block;font-family:var(--font-l);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dimmer);margin-bottom:6px;}
-.fi,.fsel,.ft{width:100%;padding:11px 14px;background:rgba(255,255,255,0.05);border:1px solid var(--border2);border-radius:7px;font-size:14px;color:var(--white);font-family:var(--font-b);outline:none;transition:border-color 0.2s,background 0.2s;}
-.fi::placeholder,.ft::placeholder{color:var(--dimmer);}
-.fi:focus,.fsel:focus,.ft:focus{border-color:var(--gold);background:rgba(255,255,255,0.07);}
-.fsel option{background:var(--navy);}
-.ft{resize:vertical;min-height:115px;}
-.fsub{width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font-b);transition:all 0.2s;}
-.fsub:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,166,35,0.3);}
-.ty{display:none;text-align:center;padding:48px 20px;}
-.ty-ico{font-size:48px;margin-bottom:14px;}
-.ty-t{font-family:var(--font-d);font-size:28px;font-weight:700;color:var(--white);margin-bottom:10px;}
-.ty-p{font-size:14px;color:var(--dim);line-height:1.7;}
-
-/* FOOTER */
-footer{background:var(--navy2);border-top:1px solid var(--border);padding:56px 24px 28px;}
-.ft-top{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:44px;}
-.ft-name{font-family:var(--font-d);font-size:20px;font-weight:700;color:var(--white);margin-bottom:4px;}
-.ft-tag{font-family:var(--font-l);font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:13px;}
-.ft-desc{font-size:13px;line-height:1.7;color:var(--dimmer);margin-bottom:16px;}
-.ft-bdgs{display:flex;gap:7px;flex-wrap:wrap;}
-.ft-bdg{background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:5px;padding:3px 9px;font-size:10.5px;font-weight:600;color:var(--gold);font-family:var(--font-l);letter-spacing:0.5px;}
-.ft-ctitle{font-family:var(--font-l);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-.ft-links{list-style:none;display:flex;flex-direction:column;gap:9px;}
-.ft-links a{font-size:13px;color:var(--dimmer);text-decoration:none;transition:color 0.2s;}
-.ft-links a:hover{color:var(--white);}
-.ft-bot{max-width:var(--max-w);margin:0 auto;padding-top:22px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.ft-copy{font-size:12px;color:var(--dimmer);}
-.ft-bl{display:flex;gap:20px;}
-.ft-bl a{font-size:12px;color:var(--dimmer);text-decoration:none;transition:color 0.2s;}
-.ft-bl a:hover{color:var(--gold);}
-
-/* MOBILE */
-@media(max-width:900px){
-  .nav-links{display:none;}.nav-mob{display:flex;}
-  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,20,34,0.97);backdrop-filter:blur(20px);padding:20px 24px;gap:4px;border-top:1px solid var(--border);}
-  .nav-links.open a{padding:12px 16px;font-size:15px;}
-  .hero-title{font-size:clamp(40px,10vw,68px);}
-  .stats-inner{grid-template-columns:repeat(3,1fr);}
-  .stat-i:nth-child(4),.stat-i:nth-child(5){display:none;}
-  .svc-grid{grid-template-columns:1fr 1fr;}
-  .work-grid{grid-template-columns:1fr;gap:40px;}
-  .team-grid{grid-template-columns:1fr 1fr;}
-  .faq-lay{grid-template-columns:1fr;gap:40px;}
-  .faq-left{position:static;}
-  .contact-grid{grid-template-columns:1fr;gap:48px;}
-  .ft-top{grid-template-columns:1fr 1fr;gap:32px;}
-  .pl-grid{grid-template-columns:1fr;}
-  .mockup-body{grid-template-columns:1fr;}
-  .mockup-sidebar{display:none;}
-}
-@media(max-width:600px){
-  .hero-ctas{flex-direction:column;align-items:center;}
-  .svc-grid{grid-template-columns:1fr;}
-  .team-grid{grid-template-columns:1fr;}
-  .ft-top{grid-template-columns:1fr;}
-  .stats-inner{grid-template-columns:1fr 1fr;}
-  .form-row{grid-template-columns:1fr;}
-  .hero-mockup-wrap{display:none;}
-  .work-metrics{grid-template-columns:repeat(3,1fr);}
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-mark">A</div>
-      <span class="nav-logo-name">All Your Needs<span class="nav-logo-dot">.</span></span>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="All Your Needs, home">
+      <svg viewBox="-42 -50 84 98" aria-hidden="true"><defs><linearGradient id="hRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E8FE1"/><stop offset="1" stop-color="#0055A5"/></linearGradient><linearGradient id="hSw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB830"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><ellipse rx="36" ry="42" fill="none" stroke="url(#hRing)" stroke-width="5"/><ellipse rx="28" ry="33" fill="none" stroke="#0077C8" stroke-width="1.5" opacity=".4"/><path d="M -38 18 C -50 -5, -30 -50, 5 -44 C 20 -41, 32 -30, 38 -14" fill="none" stroke="url(#hSw)" stroke-width="6" stroke-linecap="round"/><g stroke="#fff" stroke-linecap="round"><line x1="-13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="-7.5" y1="6" x2="7.5" y2="6" stroke-width="4"/></g></svg>
+      <span><b>ALL YOUR NEEDS</b><small>WHERE NECESSITY MEETS INNOVATION</small></span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="case-studies.html">Case Studies</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-    </ul>
-    <a href="contact.html" class="nav-btn">Get In Touch</a>
-    <div class="nav-mob" id="navMob"><span></span><span></span><span></span></div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html" class="cta">Start a project</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<section id="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-badge"><div class="hero-badge-dot"></div><span>Monrovia, Republic of Liberia — Est. 2021</span></div>
-  <h1 class="hero-title">Where <em>Necessity</em><br>Meets Innovation</h1>
-  <p class="hero-sub">Liberia's premier multi-service professional firm — survey data, GIS mapping, licensed customs brokerage, gold brokerage, and consulting under one roof.</p>
-  <div class="hero-ctas">
-    <a href="services.html" class="cta-primary">Explore Our Services ↗</a>
-    <a href="contact.html" class="cta-secondary">Start a Conversation</a>
-  </div>
-  <div class="hero-trust">
-    <span class="trust-label">Trusted by</span>
-    <div class="trust-div"></div>
-    <div class="trust-logos">
-      <span class="trust-logo">UNICEF</span>
-      <span class="trust-logo">UNFPA</span>
-      <span class="trust-logo">World Bank</span>
-      <span class="trust-logo">AfDB</span>
-      <span class="trust-logo">EU</span>
-      <span class="trust-logo">WFP</span>
+<section class="hero" id="top">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-inner hero-load">
+      <span class="coord">06.3156° N · 10.8074° W · MONROVIA</span>
+      <h1>Where necessity meets <em>innovation.</em></h1>
+      <p class="sub">Survey, GIS and digital data services for government, development partners and industry across all 15 counties of Liberia, with licensed customs and gold brokerage under the same roof.</p>
+      <div class="btns"><a class="btn gold" href="services.html">Explore our services</a><a class="btn ghost" href="#story">See how we work</a></div>
     </div>
   </div>
+  <span class="video-tag">HERO VIDEO SLOT · LIVE MOTION PLACEHOLDER</span>
+</section>
 
-  <div class="hero-mockup-wrap">
-    <div class="hero-mockup">
-      <div class="mockup-bar">
-        <div class="mockup-dots"><div class="mockup-dot dot-r"></div><div class="mockup-dot dot-y"></div><div class="mockup-dot dot-g"></div></div>
-        <span class="mockup-bar-title">All Your Needs — Operations Overview</span>
-        <span style="font-size:11px;color:var(--dimmer);">aynlr.com</span>
+<section class="proof">
+  <div class="wrap">
+    <div class="cell"><strong>15 of 15</strong><span>Liberian counties covered by our field operations</span></div>
+    <div class="cell"><strong>Late 1990s</strong><span>Leadership on national surveys and censuses since</span></div>
+    <div class="cell"><strong>2 licences</strong><span>Customs brokerage and gold brokerage</span></div>
+    <div class="cell"><strong>4 countries</strong><span>Liberia, DRC, Zambia and Angola engagements</span></div>
+  </div>
+</section>
+
+<section class="navy story" id="story">
+  <div class="wrap">
+    <div class="story-head stack-sm rv">
+      <span class="eyebrow">How we work · Field to decision</span>
+      <h2>From a household interview to a ministry briefing.</h2>
+      <p class="lede">Every engagement follows the same path. Scroll through the four stages.</p>
+    </div>
+    <div class="story-grid">
+      <div class="steps">
+        <article class="step on" data-scene="0"><span class="k">STAGE 1 · IN THE FIELD</span><h3>Collect</h3><p>Trained enumerators run interviews on tablets with CSPro and KoboToolbox. Every case is GPS-stamped, checked on the device and synced to the server each day.</p><span class="data">CAPI · GPS on every case · daily sync</span></article>
+        <article class="step" data-scene="1"><span class="k">STAGE 2 · IN THE PROCESSING ROOM</span><h3>Clean</h3><p>Structure and consistency checks run on every batch. Duplicate case IDs are resolved, household and member files are merged, and nothing moves forward until the totals reconcile.</p><span class="data">Edit checks · de-duplication · validated merges</span></article>
+        <article class="step" data-scene="2"><span class="k">STAGE 3 · ON THE MAP</span><h3>Map</h3><p>Each record is joined to its county, district and enumeration area. Field coordinates are reconciled against boundaries so every number has a place.</p><span class="data">ArcGIS Pro · EA boundaries · spatial joins</span></article>
+        <article class="step" data-scene="3"><span class="k">STAGE 4 · AT THE DECISION TABLE</span><h3>Decide</h3><p>Results arrive as dashboards, tables and short briefs that ministries, agencies and partners can act on the same week.</p><span class="data">Dashboards · reports · policy briefs</span></article>
       </div>
-      <div class="mockup-body">
-        <div class="mockup-sidebar">
-          <div class="sb-brand"><div class="sb-dot"></div><span class="sb-name">AYN</span></div>
-          <div class="sb-item on">📊 Overview</div>
-          <div class="sb-item">🗺️ GIS &amp; Maps</div>
-          <div class="sb-item">🛃 Customs <span class="sb-badge">2</span></div>
-          <div class="sb-item">🥇 Gold Trade</div>
-          <div class="sb-item">📋 Projects</div>
-          <div class="sb-item">🤝 Clients</div>
-        </div>
-        <div class="mockup-main">
-          <div class="m-row c3">
-            <div class="m-card"><div class="m-label">Active Projects</div><div class="m-val">24</div><div class="m-ch up">↑ 4 this quarter</div></div>
-            <div class="m-card"><div class="m-label">Delivered Total</div><div class="m-val g">100+</div><div class="m-ch up">↑ All on schedule</div></div>
-            <div class="m-card"><div class="m-label">Counties Covered</div><div class="m-val b">15/15</div><div class="m-ch nt">Full national coverage</div></div>
-          </div>
-          <div class="m-chart">
-            <div class="m-chart-hd">
-              <span class="m-chart-t">Project Activity — 2024</span>
-              <div class="m-tabs"><span class="m-tab">3M</span><span class="m-tab">6M</span><span class="m-tab on">1Y</span></div>
-            </div>
-            <svg width="100%" height="68" viewBox="0 0 520 68" preserveAspectRatio="none">
-              <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#F5A623" stop-opacity="0.3"/><stop offset="100%" stop-color="#F5A623" stop-opacity="0"/></linearGradient></defs>
-              <path d="M0,60 L40,52 L80,47 L120,42 L160,36 L200,30 L240,26 L280,20 L320,16 L360,12 L400,9 L440,6 L480,4 L520,2" stroke="#F5A623" stroke-width="2" fill="none" stroke-linecap="round"/>
-              <path d="M0,60 L40,52 L80,47 L120,42 L160,36 L200,30 L240,26 L280,20 L320,16 L360,12 L400,9 L440,6 L480,4 L520,2 L520,68 L0,68Z" fill="url(#cg)"/>
-              <circle cx="520" cy="2" r="4" fill="#F5A623"/>
-            </svg>
-          </div>
-          <div class="m-table">
-            <div class="m-thead"><span>Service</span><span>Client</span><span>Status</span><span>Year</span></div>
-            <div class="m-trow"><span class="m-tname"><div class="m-tdot td-g"></div>RAP Data Mgmt</span><span>ERM / World Bank</span><span><span class="m-status s-done">✓ Done</span></span><span>2024</span></div>
-            <div class="m-trow"><span class="m-tname"><div class="m-tdot td-b"></div>HIES Survey</span><span>LISGIS</span><span><span class="m-status s-act">● Active</span></span><span>2025</span></div>
-            <div class="m-trow"><span class="m-tname"><div class="m-tdot td-t"></div>GIS — EA Database</span><span>National</span><span><span class="m-status s-pend">◉ Ongoing</span></span><span>2025</span></div>
-          </div>
+      <div class="panel-wrap">
+        <div class="panel" aria-hidden="true">
+          <div class="scene on" data-i="0"><span class="scene-label">Tablet · interview in progress</span>
+            <div class="tablet"><div class="field"><span>County</span><span>Bong</span></div><div class="field"><span>Household ID</span><span>0417</span></div><div class="field"><span>Members</span><span>6</span></div><div class="field"><span>Interview date</span><span>25/10/2026</span></div><div class="bar"><i></i></div><span class="gps">◉ GPS 6.9956 N, 9.4722 W · ±4 m</span></div></div>
+          <div class="scene" data-i="1"><span class="scene-label">Processing · batch check</span>
+            <table class="tbl"><thead><tr><th>Case ID</th><th>EA</th><th>Members</th><th>Status</th></tr></thead><tbody>
+              <tr><td>06-02-0417</td><td>0113</td><td>6</td><td class="ok">✓ clean</td></tr><tr><td>06-02-0418</td><td>0113</td><td>4</td><td class="ok">✓ clean</td></tr><tr class="dup"><td>06-02-0418</td><td>0113</td><td>4</td><td>duplicate</td></tr><tr><td>06-02-0419</td><td>0114</td><td>7</td><td class="ok">✓ clean</td></tr><tr><td>06-02-0420</td><td>0114</td><td>3</td><td class="ok">✓ clean</td></tr></tbody></table>
+            <span class="flag">1 duplicate resolved · totals reconciled</span></div>
+          <div class="scene" data-i="2"><span class="scene-label">GIS · records placed on the map</span><svg class="mapsvg" id="sceneMap" viewBox="0 0 440 440"></svg></div>
+          <div class="scene" data-i="3"><span class="scene-label">Dashboard · sample indicator</span>
+            <div class="dash"><div class="bars" id="bars"><div data-h="52"></div><div data-h="71"></div><div data-h="94"></div><div data-h="63"></div><div data-h="40"></div></div>
+              <div class="bars-lbl"><span>Bomi</span><span>Bong</span><span>Lofa</span><span>Nimba</span><span>Sinoe</span></div>
+              <div class="brief"><b>Brief ready for review</b><span>Findings, maps and tables in one short document. Sample data shown.</span></div></div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="stats">
-  <div class="container">
-    <div class="stats-inner reveal">
-      <div class="stat-i"><span class="stat-num">100+</span><span class="stat-lbl">Projects Delivered</span></div>
-      <div class="stat-i"><span class="stat-num">13+</span><span class="stat-lbl">Years Experience</span></div>
-      <div class="stat-i"><span class="stat-num">762</span><span class="stat-lbl">PAPs Profiled — RAP</span></div>
-      <div class="stat-i"><span class="stat-num">2</span><span class="stat-lbl">Licensed Services</span></div>
-      <div class="stat-i"><span class="stat-num">15</span><span class="stat-lbl">Counties Covered</span></div>
+<section class="breakdown" id="breakdown">
+  <div class="bd-sticky">
+    <div class="wrap bd-grid">
+      <div class="bd-copy">
+        <span class="eyebrow">Spatial data · one country, four layers</span>
+        <h2>We see Liberia in layers.</h2>
+        <p class="lede">Our GIS team builds the frame every survey stands on, from the national boundary down to the enumeration areas where fieldwork happens.</p>
+        <ul class="layer-list" id="layerList">
+          <li data-l="0"><span>L1</span><span><b>Country boundary</b><small>The national frame</small></span></li>
+          <li data-l="1"><span>L2</span><span><b>15 counties</b><small>Administrative boundaries and centres</small></span></li>
+          <li data-l="2"><span>L3</span><span><b>Enumeration areas</b><small>The units fieldwork is planned on</small></span></li>
+          <li data-l="3"><span>L4</span><span><b>Field points</b><small>GPS-stamped households and facilities</small></span></li>
+        </ul>
+        <span class="bd-note">County boundaries from AYN's GIS data. Grid and points are illustrative.</span>
+      </div>
+      <div class="stage"><div class="stack" id="stack"></div></div>
     </div>
   </div>
 </section>
 
-<section id="services">
-  <div class="container">
-    <div class="sec-hdr reveal">
-      <div><span class="eyebrow">What We Do</span><h2 class="sec-title">Eight Services.<br><em>One Partner.</em></h2></div>
-      <a href="services.html" class="cta-secondary">View All →</a>
-    </div>
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="svc-head rv"><div class="stack-sm"><span class="eyebrow">Services</span><h2>Eight service lines. One partner.</h2></div><p class="lede" style="max-width:40ch">Hover or tap a service to see what it covers.</p></div>
     <div class="svc-grid">
-      <div class="svc-card reveal d1"><span class="svc-n">01</span><span class="svc-ico">📊</span><div class="svc-t">Survey & Data Collection</div><p class="svc-d">100+ surveys. CSPro, KoboCollect, ODK. Full lifecycle from design to final dataset.</p></div>
-      <div class="svc-card reveal d2"><span class="svc-n">02</span><span class="svc-ico">🗺️</span><div class="svc-t">GIS & Spatial Data</div><p class="svc-d">National EA shapefile. ArcGIS Pro, QGIS. Structure digitisation and field mapping.</p></div>
-      <div class="svc-card reveal d3"><span class="svc-n">03</span><span class="svc-ico">🏗️</span><div class="svc-t">Resettlement Data</div><p class="svc-d">RAP and ESIA data for World Bank, AfDB, and EU-funded infrastructure projects.</p></div>
-      <div class="svc-card reveal d4"><span class="svc-n">04</span><span class="svc-ico">📱</span><div class="svc-t">Digital Data Solutions</div><p class="svc-d">Custom mobile tools, offline sync, PostgreSQL databases, monitoring dashboards.</p></div>
-      <div class="svc-card lic reveal d1"><span class="svc-n">05</span><span class="svc-ico">🛃</span><div class="svc-t">Customs Brokerage</div><p class="svc-d">Licensed clearance — all Liberian ports and Roberts International Airport.</p><span class="svc-bdg">Licensed</span></div>
-      <div class="svc-card lic reveal d2"><span class="svc-n">06</span><span class="svc-ico">🥇</span><div class="svc-t">Gold Brokerage</div><p class="svc-d">Licensed purchase of gold for resale and export. Full regulatory compliance.</p><span class="svc-bdg">Licensed</span></div>
-      <div class="svc-card reveal d3"><span class="svc-n">07</span><span class="svc-ico">💼</span><div class="svc-t">Consulting & Advisory</div><p class="svc-d">MEAL, strategic planning, proposal development, donor reporting.</p></div>
-      <div class="svc-card reveal d4"><span class="svc-n">08</span><span class="svc-ico">🤝</span><div class="svc-t">Business Development</div><p class="svc-d">Market entry, import/export facilitation, investment readiness.</p></div>
+      <a class="svc" href="services.html#survey"><span class="tag">Data</span><div><h3>Survey &amp; Data Collection</h3><p class="teaser">CAPI surveys, nationwide fieldwork</p></div>
+        <div class="reveal-panel"><span class="tag">Data</span><h3>Survey &amp; Data Collection</h3><p>Questionnaire design in CSPro and KoboToolbox, enumerator training, field supervision and quality control across all 15 counties.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#gis"><span class="tag">Spatial</span><div><h3>GIS &amp; Spatial Data</h3><p class="teaser">Mapping, boundaries, analysis</p></div>
+        <div class="reveal-panel"><span class="tag">Spatial</span><h3>GIS &amp; Spatial Data</h3><p>Enumeration area mapping, boundary work, shapefile production and spatial analysis for surveys, planning and risk assessment.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#resettlement"><span class="tag">Data</span><div><h3>Resettlement Data Management</h3><p class="teaser">Censuses and asset inventories</p></div>
+        <div class="reveal-panel"><span class="tag">Data</span><h3>Resettlement Data Management</h3><p>Census and asset inventories of affected households, entitlement databases and records that support RAP implementation.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#digital"><span class="tag">Technology</span><div><h3>Digital Data Solutions</h3><p class="teaser">Dashboards and platforms</p></div>
+        <div class="reveal-panel"><span class="tag">Technology</span><h3>Digital Data Solutions</h3><p>Monitoring dashboards, data platforms and custom software that turn raw survey data into information people use.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#customs"><span class="tag lic">Licensed</span><div><h3>Customs Brokerage</h3><p class="teaser">All ports and RIA</p></div>
+        <div class="reveal-panel"><span class="tag">Licensed</span><h3>Customs Brokerage</h3><p>Clearance of goods for import and export through all Liberian seaports and Roberts International Airport.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#gold"><span class="tag lic">Licensed</span><div><h3>Gold Brokerage</h3><p class="teaser">Purchase for resale and export</p></div>
+        <div class="reveal-panel"><span class="tag">Licensed</span><h3>Gold Brokerage</h3><p>Lawful purchase of gold for resale and export under a government-issued gold brokers licence.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#consulting"><span class="tag">Advisory</span><div><h3>Consulting &amp; Advisory</h3><p class="teaser">Study design and review</p></div>
+        <div class="reveal-panel"><span class="tag">Advisory</span><h3>Consulting &amp; Advisory</h3><p>Methodology, sampling, study design, monitoring and evaluation frameworks and technical review.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="services.html#trade"><span class="tag">Trade</span><div><h3>Business Development &amp; Trade</h3><p class="teaser">Market entry in Liberia</p></div>
+        <div class="reveal-panel"><span class="tag">Trade</span><h3>Business Development &amp; Trade</h3><p>Market entry support, partner sourcing and help navigating procurement and trade in Liberia.</p><span class="more">Read more →</span></div></a>
     </div>
   </div>
 </section>
 
-<section id="work">
-  <div class="container">
-    <div class="work-grid">
-      <div class="reveal">
-        <div class="work-tag"><span>Featured Case Study</span></div>
-        <h2 class="work-title">RAP Data Management Across Two African Countries</h2>
-        <p class="work-body">A leading international consultancy engaged All Your Needs to manage data for a World Bank-linked toll road RAP spanning two countries — covering 762 Project-Affected Persons under tight deadlines.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="case-studies.html" class="cta-primary">Read Case Study →</a>
-          <a href="contact.html" class="cta-secondary">Start a Project</a>
-        </div>
-        <div class="work-metrics">
-          <div class="wm"><span class="wm-num">762</span><div class="wm-lbl">PAPs Profiled</div></div>
-          <div class="wm"><span class="wm-num">2</span><div class="wm-lbl">Countries</div></div>
-          <div class="wm"><span class="wm-num">100%</span><div class="wm-lbl">On Schedule</div></div>
-        </div>
-      </div>
-      <div class="work-steps reveal d2">
-        <div class="ws"><div class="ws-c">1</div><div><div class="ws-h">The Challenge</div><div class="ws-p">Tight deadlines, cross-border field teams, unreliable connectivity, and mid-project scope expansion.</div></div></div>
-        <div class="ws"><div class="ws-c">2</div><div><div class="ws-h">Our Approach</div><div class="ws-p">Custom KoboCollect tools, offline protocols, daily monitoring, supplementary instrument built mid-project.</div></div></div>
-        <div class="ws"><div class="ws-c">3</div><div><div class="ws-h">The Result</div><div class="ws-p">Complete verified dataset for all 762 PAPs — the legal foundation for family compensation decisions.</div></div></div>
-        <div class="ws"><div class="ws-c">4</div><div><div class="ws-h">Tools Used</div><div class="ws-p">KoboCollect · SPSS · Excel · Custom supplementary instruments · Offline sync protocols</div></div></div>
-      </div>
+<section class="navy pad">
+  <div class="wrap two">
+    <div class="stack-sm rv">
+      <span class="eyebrow">Featured case study</span>
+      <h2>762 affected persons. Two countries. Delivered on schedule.</h2>
+      <p class="lede">Complete data management for a cross-border toll road resettlement action plan in Central and Southern Africa, including a mid-project change in what the client needed.</p>
+      <div class="btns" style="margin-top:12px"><a class="btn gold" href="case-studies.html">Read all case studies</a></div>
+    </div>
+    <div class="lic-cards rv">
+      <div class="lic-card"><span class="eyebrow">Licence</span><b>Customs Brokers Licence</b><span>All Liberian seaports and Roberts International Airport, import and export.</span></div>
+      <div class="lic-card"><span class="eyebrow">Licence</span><b>Gold Brokers Licence</b><span>Purchase of gold for resale and export.</span></div>
+      <div class="lic-card"><span class="eyebrow">Our leadership has worked alongside</span><b>UNICEF · UNFPA · World Bank · WFP · AfDB · EU</b><span>Plus the Ministry of Health, the National Elections Commission and LISGIS.</span></div>
     </div>
   </div>
 </section>
 
-<section id="team">
-  <div class="container">
-    <div class="sec-hdr reveal">
-      <div><span class="eyebrow">Our People</span><h2 class="sec-title">The Team Behind<br><em>The Work</em></h2></div>
-      <a href="team.html" class="cta-secondary">Meet Everyone →</a>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal d1"><div class="tc-top"><span class="tc-init">JN</span></div><div class="tc-body"><div class="tc-name">Joseph W. Nyan</div><div class="tc-role">Chief Executive Officer</div><div class="tc-bio">40+ years in data processing. MSc CS, NYIT. Led every major Liberian census since 1999.</div></div></div>
-      <div class="team-card reveal d2"><div class="tc-top"><span class="tc-init">RR</span></div><div class="tc-body"><div class="tc-name">Richard E. Russ II</div><div class="tc-role">Managing Director</div><div class="tc-bio">Director at LISGIS. 13+ years, 100+ projects. Licensed Customs &amp; Gold Broker.</div></div></div>
-      <div class="team-card reveal d3"><div class="tc-top"><span class="tc-init">MK</span></div><div class="tc-body"><div class="tc-name">Mulbah K.A. Kromah</div><div class="tc-role">Technical Director</div><div class="tc-bio">MSc Statistics. Survey methodology and quantitative analysis oversight.</div></div></div>
-      <div class="team-card reveal d4"><div class="tc-top"><span class="tc-init">AS</span></div><div class="tc-body"><div class="tc-name">Abraham Saar</div><div class="tc-role">GIS Specialist</div><div class="tc-bio">6 years GIS. ArcGIS Pro, QGIS. EA delineation, satellite imagery, national spatial database.</div></div></div>
+<section class="pad">
+  <div class="wrap">
+    <div class="svc-head rv"><div class="stack-sm"><span class="eyebrow">Leadership</span><h2>The team behind the work.</h2></div><a class="text-link" href="team.html">Meet the full team →</a></div>
+    <div class="team-mini">
+      <div class="rv"><b>Joseph W. Nyan</b><span>Chief Executive Officer</span></div><div class="rv"><b>Richard Emmett Russ II</b><span>Managing Director</span></div><div class="rv"><b>Mulbah K.A. Kromah</b><span>Technical Director</span></div><div class="rv"><b>Boye T. Wright</b><span>Finance Manager</span></div><div class="rv"><b>Walid Wehbe</b><span>Operations Manager</span></div><div class="rv"><b>Mohammed S. Bah</b><span>Lead ICT / Developer</span></div><div class="rv"><b>Abraham H. Saar</b><span>GIS Specialist</span></div>
     </div>
   </div>
 </section>
 
-<section id="pipeline">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto;">
-      <span class="eyebrow">Coming 2025–2026</span>
-      <h2 class="sec-title">Expanding Our<br><em>Capabilities</em></h2>
-    </div>
-    <div class="pl-grid">
-      <div class="pl-card reveal d1"><span class="pl-soon">Coming Soon</span><span class="pl-ico">🚁</span><div class="pl-t">Drone-Based Aerial Survey & Property Monitoring</div><p class="pl-d">Aerial photography, live surveillance feeds, settlement mapping, and custom-built drones for Liberian field conditions.</p></div>
-      <div class="pl-card reveal d2"><span class="pl-soon">Coming Soon</span><span class="pl-ico">🔐</span><div class="pl-t">Cybersecurity & Ethical Hacking Services</div><p class="pl-d">Network vulnerability assessments, penetration testing, and security audits for government, finance, and NGOs.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="container">
-    <div class="faq-lay">
-      <div class="faq-left reveal">
-        <span class="eyebrow">FAQ</span>
-        <h2 class="sec-title">Common<br><em>Questions</em></h2>
-        <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:24px;">Can't find what you need?</p>
-        <a href="faq.html" class="cta-secondary" style="display:inline-flex;">All FAQs →</a>
-      </div>
-      <div class="faq-items reveal d2">
-        <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">What types of clients do you serve?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-ai">UN agencies (UNICEF, UNFPA, WFP), World Bank, AfDB, EU, Liberian government ministries, international NGOs, infrastructure firms, and private sector companies in Liberia and West Africa.</div></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">What does your Customs Brokers Licence cover?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-ai">All Liberian seaports — Freeport of Monrovia, Buchanan, Greenville, Harper — and Roberts International Airport. Both import and export. Full documentation, tariff classification, and LRA liaison.</div></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Can you work as a sub-contractor to international firms?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-ai">Yes — this is one of our most common engagement models. If your firm is bidding on a Liberian project and needs a credible, licensed local sub-contractor, contact us.</div></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Do you manage data collection outside Liberia?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-ai">Yes. Delivered engagements in DRC, Zambia, and Angola. Experienced in cross-border operations under World Bank and AfDB safeguard standards.</div></div></div>
-        <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">How do we get started?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-ai">Email rerii@aynlr.com or use the form below. Share your project scope, timeline, and location. We respond within 24 hours.</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="reveal">
-        <span class="eyebrow">Get In Touch</span>
-        <h2 class="sec-title">Let's Work<br><em>Together</em></h2>
-        <p style="font-size:15px;color:var(--dim);line-height:1.7;margin-bottom:32px;">Whatever your requirement in Liberia — we have the expertise, the licences, and the local knowledge.</p>
-        <div class="cd-list">
-          <div class="cd-item"><div class="cd-ico">📞</div><div><div class="cd-lbl">Phone</div><div class="cd-val"><a href="tel:+231777969916">+231 777 969 916</a></div></div></div>
-          <div class="cd-item"><div class="cd-ico">✉️</div><div><div class="cd-lbl">General</div><div class="cd-val"><a href="mailto:info@aynlr.com">info@aynlr.com</a></div></div></div>
-          <div class="cd-item"><div class="cd-ico">👤</div><div><div class="cd-lbl">Managing Director</div><div class="cd-val"><a href="mailto:rerii@aynlr.com">rerii@aynlr.com</a></div></div></div>
-          <div class="cd-item"><div class="cd-ico">📍</div><div><div class="cd-lbl">Location</div><div class="cd-val">Monrovia, Montserrado County, Liberia</div></div></div>
-        </div>
-      </div>
-      <div class="reveal d2">
-        <div class="form-wrap">
-          <div id="cForm">
-            <div style="margin-bottom:22px;"><div style="font-family:var(--font-d);font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">Send a Message</div><div style="font-size:13px;color:var(--dimmer);">We respond within 24 hours.</div></div>
-            <div class="form-row">
-              <div class="fg"><label class="fl">First Name</label><input type="text" class="fi" placeholder="First name"></div>
-              <div class="fg"><label class="fl">Last Name</label><input type="text" class="fi" placeholder="Last name"></div>
-            </div>
-            <div class="fg"><label class="fl">Organisation</label><input type="text" class="fi" placeholder="Your organisation"></div>
-            <div class="fg"><label class="fl">Email</label><input type="email" class="fi" placeholder="your@email.com"></div>
-            <div class="fg">
-              <label class="fl">Service of Interest</label>
-              <select class="fsel fi">
-                <option value="" disabled selected>Select a service</option>
-                <option>Survey & Data Collection</option>
-                <option>GIS & Spatial Data</option>
-                <option>Resettlement Data Management</option>
-                <option>Customs Brokerage</option>
-                <option>Gold Brokerage</option>
-                <option>Digital Data Solutions</option>
-                <option>Consulting & Advisory</option>
-                <option>Business Development</option>
-                <option>Sub-contracting / Partnership</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="fg"><label class="fl">Tell Us About Your Project</label><textarea class="ft" placeholder="Scope, timeline, location..."></textarea></div>
-            <button class="fsub" onclick="submitForm()">Send Inquiry →</button>
-          </div>
-          <div class="ty" id="cThanks">
-            <div class="ty-ico">✅</div>
-            <div class="ty-t">Message Received</div>
-            <p class="ty-p">Thank you for reaching out. We will respond within 24 hours.</p>
-            <a href="#hero" class="cta-secondary" style="display:inline-flex;margin-top:24px;">Back to Top</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<section class="cta-band"><div class="wrap"><h2>Planning a survey, a map or a shipment?</h2><a class="btn navyb" href="contact.html">Talk to our team</a></div></section>
 <footer>
-  <div class="ft-top">
-    <div>
-      <div class="ft-name">All Your Needs</div>
-      <span class="ft-tag">Where Necessity Meets Innovation</span>
-      <p class="ft-desc">Liberia's premier multi-service professional firm. Incorporated 2021 under the laws of the Republic of Liberia.</p>
-      <div class="ft-bdgs"><span class="ft-bdg">Licensed Customs Broker</span><span class="ft-bdg">Licensed Gold Broker</span></div>
-    </div>
-    <div>
-      <div class="ft-ctitle">Services</div>
-      <ul class="ft-links">
-        <li><a href="services.html#survey">Survey & Data</a></li>
-        <li><a href="services.html#gis">GIS & Mapping</a></li>
-        <li><a href="services.html#resettlement">Resettlement Data</a></li>
-        <li><a href="services.html#customs">Customs Brokerage</a></li>
-        <li><a href="services.html#gold">Gold Brokerage</a></li>
-        <li><a href="services.html#consulting">Consulting</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="ft-ctitle">Company</div>
-      <ul class="ft-links">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="team.html">Our Team</a></li>
-        <li><a href="case-studies.html">Case Studies</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="privacy.html">Privacy Policy</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="ft-ctitle">Contact</div>
-      <ul class="ft-links">
-        <li><a href="tel:+231777969916">+231 777 969 916</a></li>
-        <li><a href="mailto:info@aynlr.com">info@aynlr.com</a></li>
-        <li><a href="mailto:rerii@aynlr.com">rerii@aynlr.com</a></li>
-        <li><a href="https://www.aynlr.com">www.aynlr.com</a></li>
-        <li><a href="contact.html">Monrovia, Liberia</a></li>
-      </ul>
-    </div>
+  <div class="wrap foot">
+    <div class="stack-sm"><img src="assets/logo-dark.svg" alt="All Your Needs, where necessity meets innovation" width="260" height="60"><p>A Liberian professional services firm for survey, GIS, digital data, customs and gold brokerage.</p></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="team.html">Team</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html#survey">Survey &amp; data</a></li><li><a href="services.html#gis">GIS &amp; spatial</a></li><li><a href="services.html#resettlement">Resettlement data</a></li><li><a href="services.html#customs">Customs brokerage</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>+231 777 969 916</li><li>info@aynlr.com</li><li>Monrovia, Liberia</li></ul></div>
   </div>
-  <div class="ft-bot">
-    <span class="ft-copy">© 2025 All Your Needs. All rights reserved. Incorporated in the Republic of Liberia.</span>
-    <div class="ft-bl"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#terms">Terms & Conditions</a></div>
-  </div>
+  <div class="wrap foot-bar"><span>© 2026 All Your Needs Incorporated</span><span>www.aynlr.com</span></div>
 </footer>
-
-<script>
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);});
-document.getElementById('navMob').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
-document.querySelectorAll('#navLinks a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));});
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-function tFaq(btn){
-  const item=btn.closest('.faq-item');
-  const ans=item.querySelector('.faq-a');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});
-  if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
-}
-async function submitForm(){
-  const form = document.getElementById('cForm');
-  const thanks = document.getElementById('cThanks');
-  const btn = form.querySelector('.fsub');
-  const origText = btn.textContent;
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  const inputs = form.querySelectorAll('input,select,textarea');
-  const labels = form.querySelectorAll('.fl');
-  const data = {};
-  inputs.forEach((el,i) => { if(labels[i]) data[labels[i].textContent.trim()] = el.value; });
-  try {
-    const res = await fetch('https://formspree.io/f/mlgpwqzd', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(data)
-    });
-    if(res.ok){ form.style.display='none'; thanks.style.display='block'; }
-    else { btn.textContent = origText; btn.disabled = false; alert('Something went wrong. Email us at rerii@aynlr.com'); }
-  } catch(e) { btn.textContent = origText; btn.disabled = false; alert('Connection error. Email rerii@aynlr.com directly.'); }
-}
-</script>
+<script src="assets/counties.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>

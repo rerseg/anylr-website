@@ -1,378 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="All Your Needs Services — Survey & Data Collection, GIS Mapping, Customs Brokerage, Gold Brokerage, Resettlement Data Management and more in Liberia.">
-<title>Services | All Your Needs — Monrovia, Liberia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Services · All Your Needs</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="RERII">
+<meta name="description" content="Survey, GIS, resettlement data, digital solutions, customs and gold brokerage, consulting and trade services.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-.services-intro { padding: var(--section-pad); background: var(--white); }
-.services-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-
-/* Service blocks */
-.service-block { padding: 80px 0; border-bottom: 1px solid var(--border); }
-.service-block:last-child { border-bottom: none; }
-.service-block-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.service-block-inner.reverse { direction: rtl; }
-.service-block-inner.reverse > * { direction: ltr; }
-.service-block-alt { background: var(--off-white); }
-.service-num-big { font-family: var(--font-display); font-size: 120px; font-weight: 700; color: var(--off-white); line-height: 1; margin-bottom: -20px; display: block; }
-.service-block-alt .service-num-big { color: var(--border); }
-.service-block-title { font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
-.service-block-body { font-size: 15px; line-height: 1.8; color: #4A5568; margin-bottom: 24px; }
-.service-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-.service-features li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text); line-height: 1.5; }
-.service-features li::before { content: ''; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
-.service-visual-card { background: var(--navy); border-radius: 12px; padding: 40px; height: 100%; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-.service-visual-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--blue)); }
-.service-visual-icon { font-size: 52px; margin-bottom: 20px; display: block; }
-.service-visual-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
-.service-visual-desc { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); }
-.service-tag-licensed { display: inline-flex; align-items: center; gap: 6px; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.35); border-radius: 6px; padding: 6px 14px; margin-bottom: 16px; }
-.service-tag-licensed span { font-family: var(--font-label); font-size: 11px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; font-weight: 700; }
-
-/* Pipeline */
-.pipeline { padding: var(--section-pad); background: var(--navy); position: relative; }
-.pipeline::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-.pipeline-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
-.pipeline-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 40px; }
-.pipeline-badge { display: inline-block; background: rgba(245,166,35,0.15); border: 1px solid rgba(245,166,35,0.3); border-radius: 4px; padding: 3px 10px; font-family: var(--font-label); font-size: 10px; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 16px; }
-.pipeline-icon { font-size: 36px; margin-bottom: 16px; display: block; }
-.pipeline-title { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
-.pipeline-desc { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.55); }
-
-@media (max-width: 900px) {
-  .services-intro-grid { grid-template-columns: 1fr; gap: 40px; }
-  .service-block-inner { grid-template-columns: 1fr; gap: 40px; }
-  .service-block-inner.reverse { direction: ltr; }
-  .pipeline-cards { grid-template-columns: 1fr; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div id="navPlaceholder"></div>
-
-<!-- HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Services</span>
-    </div>
-    <span class="page-hero-label">What We Do</span>
-    <h1 class="page-hero-title">Eight Services.<br><em>One Partner.</em></h1>
-    <p class="page-hero-sub">From national censuses to gold export, customs clearance to GIS mapping — All Your Needs covers the full spectrum of professional services required to operate in Liberia.</p>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="All Your Needs, home">
+      <svg viewBox="-42 -50 84 98" aria-hidden="true"><defs><linearGradient id="hRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E8FE1"/><stop offset="1" stop-color="#0055A5"/></linearGradient><linearGradient id="hSw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB830"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><ellipse rx="36" ry="42" fill="none" stroke="url(#hRing)" stroke-width="5"/><ellipse rx="28" ry="33" fill="none" stroke="#0077C8" stroke-width="1.5" opacity=".4"/><path d="M -38 18 C -50 -5, -30 -50, 5 -44 C 20 -41, 32 -30, 38 -14" fill="none" stroke="url(#hSw)" stroke-width="6" stroke-linecap="round"/><g stroke="#fff" stroke-linecap="round"><line x1="-13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="-7.5" y1="6" x2="7.5" y2="6" stroke-width="4"/></g></svg>
+      <span><b>ALL YOUR NEEDS</b><small>WHERE NECESSITY MEETS INNOVATION</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html" class="cta">Start a project</a>
+    </nav>
   </div>
-</div>
-
-<!-- SERVICES WRAPPER -->
-<div style="padding: 0 24px;">
-<div style="max-width:var(--max-w);margin:0 auto;">
-
-<!-- 01 Survey -->
-<div class="service-block" id="survey">
-  <div class="service-block-inner reveal">
-    <div>
-      <span class="service-num-big">01</span>
-      <span class="label">Survey & Data Collection</span>
-      <h2 class="service-block-title">End-to-End Survey Operations Across Liberia</h2>
-      <p class="service-block-body">Our data collection capability is unmatched in Liberia. With over 100 surveys delivered by our team across their professional careers for the world's leading development organisations, we manage the complete survey lifecycle — from instrument design to final dataset delivery.</p>
-      <ul class="service-features">
-        <li>Household, community, population, and livelihood surveys</li>
-        <li>Census design and enumeration management</li>
-        <li>CSPro CAPI application design and programming</li>
-        <li>KoboCollect and ODK XLSForm development (including multilingual forms)</li>
-        <li>Socioeconomic, demographic, and market research assessments</li>
-        <li>Baseline, midline, and endline programme evaluations</li>
-        <li>Daily field progress monitoring and real-time data quality control</li>
-        <li>Data cleaning, analysis, and reporting in SPSS, Stata, and Excel</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Discuss a Survey Project</a>
-    </div>
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">📊</span>
-        <div>
-          <div class="service-visual-title">100+ Surveys Delivered</div>
-          <p class="service-visual-desc">UNICEF, UNFPA, World Bank, WFP, Ministry of Health, National Elections Commission, Red Cross, UN Women, Central Bank of Liberia, and more.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;">
-          <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:16px;text-align:center;">
-            <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--gold);">13+</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Years Experience</div>
-          </div>
-          <div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:16px;text-align:center;">
-            <div style="font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--gold);">15</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">Counties Covered</div>
-          </div>
-        </div>
-      </div>
-    </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <div class="stack-sm hero-load"><span class="crumb">Services</span><h1>Eight service lines. <em>One partner.</em></h1><p>From fieldwork and maps to dashboards, customs clearance and gold trade.</p></div>
+    <svg class="head-map" viewBox="0 0 440 440" aria-hidden="true"></svg>
   </div>
-</div>
-
-<!-- 02 GIS -->
-<div class="service-block" id="gis" style="background:var(--off-white);padding-left:24px;padding-right:24px;margin:0 -24px;">
-  <div class="service-block-inner reverse reveal" style="max-width:var(--max-w);margin:0 auto;">
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">🗺️</span>
-        <div>
-          <div class="service-visual-title">National EA Shapefile Coverage</div>
-          <p class="service-visual-desc">We hold and manage the national Enumeration Area shapefile database for all of Liberia — the most comprehensive spatial data asset for survey frame development in the country.</p>
-        </div>
-        <div style="margin-top:24px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.25);border-radius:8px;padding:16px;">
-          <div style="font-size:13px;font-weight:600;color:var(--gold);">Tools: ArcGIS Pro · QGIS · Python</div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <span class="service-num-big">02</span>
-      <span class="label">GIS & Spatial Data Services</span>
-      <h2 class="service-block-title">Spatial Intelligence for Surveys, Infrastructure & Planning</h2>
-      <p class="service-block-body">Our GIS team provides the spatial data foundation that national surveys, infrastructure projects, and development programmes depend on. We hold the national EA shapefile for all of Liberia — an asset no other private firm in the country possesses.</p>
-      <ul class="service-features">
-        <li>Enumeration Area (EA) boundary delineation and national database management</li>
-        <li>Structure digitisation and settlement mapping from satellite imagery</li>
-        <li>Survey frame development for national censuses and household surveys</li>
-        <li>Field map production for enumerators and field supervisors</li>
-        <li>Mobile offline mapping packages for field teams</li>
-        <li>Satellite imagery analysis and land use change detection</li>
-        <li>Coverage monitoring and gap analysis during active fieldwork</li>
-        <li>ArcGIS Pro and QGIS project development and delivery</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Discuss a GIS Project</a>
-    </div>
-  </div>
-</div>
-
-<!-- 03 Resettlement -->
-<div class="service-block" id="resettlement">
-  <div class="service-block-inner reveal">
-    <div>
-      <span class="service-num-big">03</span>
-      <span class="label">Resettlement Data Management</span>
-      <h2 class="service-block-title">RAP & ESIA Data Management for Infrastructure Projects</h2>
-      <p class="service-block-body">Infrastructure projects funded by the World Bank, AfDB, and EU require rigorous social safeguard compliance. We manage the complete data lifecycle for Resettlement Action Plans — from baseline surveys to compensation data management — across Liberia and the sub-region.</p>
-      <ul class="service-features">
-        <li>Project-Affected Household (PAH) census and socioeconomic profiling</li>
-        <li>Asset inventory and compensation calculation data management</li>
-        <li>Environmental and Social Impact Assessment (ESIA) data support</li>
-        <li>World Bank OP 4.12 and AfDB safeguard compliance</li>
-        <li>Cross-border and multi-country data operations</li>
-        <li>Field team training, supervision, and quality assurance</li>
-        <li>KoboCollect tool design for RAP-specific indicators</li>
-        <li>Final dataset delivery and analytical reporting</li>
-      </ul>
-      <a href="case-studies.html" class="btn btn-primary">See Our Case Study</a>
-    </div>
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">🏗️</span>
-        <div>
-          <div class="service-visual-title">Cross-Border RAP Experience</div>
-          <p class="service-visual-desc">762 Project-Affected Persons profiled across two countries for a World Bank-linked toll road project in Central and Southern Africa. Delivered 100% on schedule despite tight deadlines and field connectivity challenges.</p>
-        </div>
-        <a href="case-studies.html" style="color:var(--gold);font-size:13px;font-weight:600;text-decoration:none;margin-top:16px;display:inline-block;">Read the full case study →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 04 Digital -->
-<div class="service-block" id="digital" style="background:var(--off-white);padding-left:24px;padding-right:24px;margin:0 -24px;">
-  <div class="service-block-inner reverse reveal" style="max-width:var(--max-w);margin:0 auto;">
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">📱</span>
-        <div>
-          <div class="service-visual-title">Custom Tools. Built to Spec.</div>
-          <p class="service-visual-desc">We do not use off-the-shelf forms. Every data collection tool we build is designed for the specific indicators, languages, and field conditions of your project.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:8px;margin-top:20px;">
-          <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">📦 CSPro · KoboCollect · ODK</div>
-          <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">🗄️ PostgreSQL · SPSS · Excel</div>
-          <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:10px 14px;font-size:13px;color:rgba(255,255,255,0.7);">📡 Offline sync · Bluetooth pairing</div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <span class="service-num-big">04</span>
-      <span class="label">Digital Data Solutions</span>
-      <h2 class="service-block-title">Custom Data Collection Tools & Digital Infrastructure</h2>
-      <p class="service-block-body">We design, build, and deploy custom digital data collection systems tailored to the specific requirements of your project — including multilingual forms, offline capability, and integration with existing data management systems.</p>
-      <ul class="service-features">
-        <li>CSPro CAPI application design and programming for Android</li>
-        <li>KoboCollect and ODK XLSForm design including multilingual support</li>
-        <li>Bluetooth data synchronisation systems for areas without connectivity</li>
-        <li>PostgreSQL survey database design and management</li>
-        <li>Staff training and capacity building in data collection tools</li>
-        <li>Survey monitoring dashboards and progress tracking systems</li>
-        <li>IT infrastructure advisory for data management units</li>
-        <li>Data format conversion: SPSS, Stata, Excel, CSPro, CSV</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Discuss a Digital Project</a>
-    </div>
-  </div>
-</div>
-
-<!-- 05 Customs -->
-<div class="service-block" id="customs">
-  <div class="service-block-inner reveal">
-    <div>
-      <div class="service-tag-licensed">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Government Licensed</span>
-      </div>
-      <span class="service-num-big">05</span>
-      <span class="label">Customs Brokerage</span>
-      <h2 class="service-block-title">Licensed Clearance Through All Liberian Ports & Airport</h2>
-      <p class="service-block-body">All Your Needs holds a government-issued Customs Brokers Licence authorising us to clear goods on behalf of clients through all Liberian seaports and Roberts International Airport — for both import and export. We handle every step of the clearance process.</p>
-      <ul class="service-features">
-        <li>Import and export clearance — all Liberian seaports</li>
-        <li>Clearance through Roberts International Airport</li>
-        <li>Full customs documentation preparation and filing</li>
-        <li>Tariff classification and duty calculation</li>
-        <li>Liaison with Liberia Revenue Authority (LRA)</li>
-        <li>Coordination with freight forwarders and shipping agents</li>
-        <li>Priority and time-sensitive cargo clearance</li>
-        <li>Regulatory advisory for NGOs and international organisations</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Enquire About Customs</a>
-    </div>
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">🛃</span>
-        <div>
-          <div class="service-visual-title">All Liberian Ports Covered</div>
-          <p class="service-visual-desc">Freeport of Monrovia · Port of Buchanan · Port of Greenville · Port of Harper · Roberts International Airport</p>
-        </div>
-        <div style="margin-top:24px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:20px;">
-          <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;">Why use a licensed broker?</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;">Unlicensed customs facilitation is illegal in Liberia and can result in seized goods and significant fines. A licensed broker protects your cargo and ensures full legal compliance.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 06 Gold -->
-<div class="service-block" id="gold" style="background:var(--off-white);padding-left:24px;padding-right:24px;margin:0 -24px;">
-  <div class="service-block-inner reverse reveal" style="max-width:var(--max-w);margin:0 auto;">
-    <div>
-      <div class="service-visual-card">
-        <span class="service-visual-icon">🥇</span>
-        <div>
-          <div class="service-visual-title">Compliant Gold Supply Chain</div>
-          <p class="service-visual-desc">For international buyers who need a traceable, legally compliant source of Liberian gold — we provide the licenced brokerage infrastructure that makes it possible.</p>
-        </div>
-        <div style="margin-top:24px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:8px;padding:20px;">
-          <div style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;">Regulatory Compliance</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;">All transactions documented and compliant with the Minerals and Mining Act of Liberia. Liaised with Ministry of Mines and Energy.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="service-tag-licensed">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Government Licensed</span>
-      </div>
-      <span class="service-num-big">06</span>
-      <span class="label">Gold Brokerage</span>
-      <h2 class="service-block-title">Licensed Purchase of Gold for Resale & Export</h2>
-      <p class="service-block-body">All Your Needs holds a government-issued Gold Brokers Licence authorising us to purchase gold from artisanal and small-scale miners for resale and export. We provide a fully compliant, transparent, and documented gold transaction service.</p>
-      <ul class="service-features">
-        <li>Licensed purchase of gold from artisanal miners</li>
-        <li>Transparent valuation and competitive pricing</li>
-        <li>Full transaction documentation for regulatory compliance</li>
-        <li>Liaison with Ministry of Mines and Energy</li>
-        <li>Facilitation of lawful gold export</li>
-        <li>Support for international buyers seeking compliant supply chains</li>
-        <li>Compliance with Liberian minerals and anti-money laundering regulations</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Enquire About Gold Brokerage</a>
-    </div>
-  </div>
-</div>
-
-<!-- 07-08 Consulting & Business Dev -->
-<div class="service-block" id="consulting">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="reveal">
-    <div style="background:var(--off-white);border-radius:12px;padding:40px;border:1px solid var(--border);">
-      <span class="service-num-big" style="font-size:72px;color:var(--border);">07</span>
-      <span class="label">Consulting & Advisory</span>
-      <h3 style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.3;">Strategic Consulting & Development Advisory</h3>
-      <ul class="service-features">
-        <li>Organisational development and institutional capacity building</li>
-        <li>Project management and implementation support</li>
-        <li>Monitoring, Evaluation, Accountability, and Learning (MEAL)</li>
-        <li>Strategic planning and programme design</li>
-        <li>Grant writing, proposal development, donor reporting</li>
-        <li>Policy analysis and advocacy support</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">Get In Touch</a>
-    </div>
-    <div style="background:var(--navy);border-radius:12px;padding:40px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);"></div>
-      <span class="service-num-big" style="font-size:72px;color:rgba(255,255,255,0.06);">08</span>
-      <span class="label" style="color:var(--gold);">Business Development</span>
-      <h3 style="font-family:var(--font-display);font-size:26px;font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.3;">Business Development & Trade Facilitation</h3>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px;">
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Business planning, structuring, and formalisation</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Market entry strategy and competitive analysis</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Import/export facilitation and supply chain coordination</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Investment readiness preparation</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Commodity sourcing and trading advisory</li>
-        <li style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:var(--gold);margin-top:2px;">▸</span>Stakeholder engagement and partnership facilitation</li>
-      </ul>
-      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-    </div>
-  </div>
-</div>
-
-</div><!-- end max-width wrapper -->
-</div><!-- end padding wrapper -->
-
-<!-- PIPELINE -->
-<section class="pipeline">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto;">
-      <span class="label" style="color:var(--gold);">Coming in 2025–2026</span>
-      <h2 class="section-title" style="color:var(--white);">Expanding Service Capabilities</h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.8;">Two new service lines are in active development and will be available for client engagements shortly.</p>
-    </div>
-    <div class="pipeline-cards">
-      <div class="pipeline-card reveal reveal-delay-1">
-        <span class="pipeline-badge">Coming Soon</span>
-        <span class="pipeline-icon">🚁</span>
-        <div class="pipeline-title">Drone-Based Aerial Survey & Property Monitoring</div>
-        <p class="pipeline-desc">Aerial photography and videography, live property surveillance feeds, settlement and EA mapping from the air, infrastructure monitoring, and custom-built drones designed for Liberian field conditions.</p>
-      </div>
-      <div class="pipeline-card reveal reveal-delay-2">
-        <span class="pipeline-badge">Coming Soon</span>
-        <span class="pipeline-icon">🔐</span>
-        <div class="pipeline-title">Cybersecurity & Ethical Hacking Services</div>
-        <p class="pipeline-desc">Network vulnerability assessments, penetration testing, cybersecurity audits for government agencies, financial institutions, and NGOs. Security awareness training and incident response planning.</p>
-      </div>
+</section>
+<section class="pad" style="padding-bottom:40px">
+  <div class="wrap">
+    <div class="svc-grid">
+      <a class="svc" href="#survey"><span class="tag">Data</span><div><h3>Survey &amp; Data Collection</h3><p class="teaser">CAPI surveys, nationwide fieldwork</p></div>
+        <div class="reveal-panel"><span class="tag">Data</span><h3>Survey &amp; Data Collection</h3><p>Questionnaire design in CSPro and KoboToolbox, enumerator training, field supervision and quality control across all 15 counties.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#gis"><span class="tag">Spatial</span><div><h3>GIS &amp; Spatial Data</h3><p class="teaser">Mapping, boundaries, analysis</p></div>
+        <div class="reveal-panel"><span class="tag">Spatial</span><h3>GIS &amp; Spatial Data</h3><p>Enumeration area mapping, boundary work, shapefile production and spatial analysis for surveys, planning and risk assessment.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#resettlement"><span class="tag">Data</span><div><h3>Resettlement Data Management</h3><p class="teaser">Censuses and asset inventories</p></div>
+        <div class="reveal-panel"><span class="tag">Data</span><h3>Resettlement Data Management</h3><p>Census and asset inventories of affected households, entitlement databases and records that support RAP implementation.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#digital"><span class="tag">Technology</span><div><h3>Digital Data Solutions</h3><p class="teaser">Dashboards and platforms</p></div>
+        <div class="reveal-panel"><span class="tag">Technology</span><h3>Digital Data Solutions</h3><p>Monitoring dashboards, data platforms and custom software that turn raw survey data into information people use.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#customs"><span class="tag lic">Licensed</span><div><h3>Customs Brokerage</h3><p class="teaser">All ports and RIA</p></div>
+        <div class="reveal-panel"><span class="tag">Licensed</span><h3>Customs Brokerage</h3><p>Clearance of goods for import and export through all Liberian seaports and Roberts International Airport.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#gold"><span class="tag lic">Licensed</span><div><h3>Gold Brokerage</h3><p class="teaser">Purchase for resale and export</p></div>
+        <div class="reveal-panel"><span class="tag">Licensed</span><h3>Gold Brokerage</h3><p>Lawful purchase of gold for resale and export under a government-issued gold brokers licence.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#consulting"><span class="tag">Advisory</span><div><h3>Consulting &amp; Advisory</h3><p class="teaser">Study design and review</p></div>
+        <div class="reveal-panel"><span class="tag">Advisory</span><h3>Consulting &amp; Advisory</h3><p>Methodology, sampling, study design, monitoring and evaluation frameworks and technical review.</p><span class="more">Read more →</span></div></a>
+      <a class="svc" href="#trade"><span class="tag">Trade</span><div><h3>Business Development &amp; Trade</h3><p class="teaser">Market entry in Liberia</p></div>
+        <div class="reveal-panel"><span class="tag">Trade</span><h3>Business Development &amp; Trade</h3><p>Market entry support, partner sourcing and help navigating procurement and trade in Liberia.</p><span class="more">Read more →</span></div></a>
     </div>
   </div>
 </section>
-
-<!-- CTA -->
-<div style="background:var(--gold);padding:80px 24px;text-align:center;">
-  <div class="container">
-    <h2 style="font-family:var(--font-display);font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--navy);margin-bottom:16px;">Not Sure Which Service You Need?</h2>
-    <p style="font-size:16px;color:rgba(26,43,74,0.7);margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;">Tell us about your project and we will advise on the right approach. No obligation.</p>
-    <a href="contact.html" class="btn btn-dark">Talk to Us →</a>
+<section style="padding-bottom:64px">
+  <div class="wrap">
+    <article class="svc-detail rv" id="survey">
+      <div class="stack-sm"><span class="eyebrow">Data</span><h2>Survey &amp; Data Collection</h2></div>
+      <div class="body"><p class="lede">We design and run household, facility and market surveys from the first questionnaire draft to the final clean dataset. Interviews are captured on tablets, every case carries GPS coordinates, and data reaches the server daily so problems are caught while teams are still in the field.</p><ul class="deliver"><li>Questionnaire design in CSPro and KoboToolbox</li><li>Sampling and listing</li><li>Enumerator recruitment and training</li><li>Field supervision and back-checks</li><li>Daily data sync and monitoring</li><li>Clean, documented datasets</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="gis">
+      <div class="stack-sm"><span class="eyebrow">Spatial</span><h2>GIS &amp; Spatial Data</h2></div>
+      <div class="body"><p class="lede">Our GIS team builds the spatial frame that surveys and plans depend on. We prepare enumeration area maps for fieldwork, check boundaries against field data and produce maps and spatial analysis for planning and risk work.</p><ul class="deliver"><li>Enumeration area maps for fieldwork</li><li>County, district and EA boundary files</li><li>Field GPS reconciliation</li><li>Thematic and hazard mapping</li><li>Spatial analysis in ArcGIS Pro</li><li>Map products for reports</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="resettlement">
+      <div class="stack-sm"><span class="eyebrow">Data</span><h2>Resettlement Data Management</h2></div>
+      <div class="body"><p class="lede">Resettlement action plans depend on accurate records of every affected household and asset. We manage that data from census to entitlement, with tools that hold up under tight timelines and difficult field conditions.</p><ul class="deliver"><li>Census of project-affected persons</li><li>Asset and land inventories</li><li>Entitlement and compensation databases</li><li>Grievance and payment tracking</li><li>Data quality review</li><li>Reporting for RAP documents</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="digital">
+      <div class="stack-sm"><span class="eyebrow">Technology</span><h2>Digital Data Solutions</h2></div>
+      <div class="body"><p class="lede">We build the systems that turn survey data into something decision-makers can open and use, from monitoring dashboards over live field data to custom applications.</p><ul class="deliver"><li>Monitoring dashboards</li><li>Data platforms and databases</li><li>CAPI application development</li><li>Data processing pipelines</li><li>Custom web and mobile apps</li><li>Training and handover</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="customs">
+      <div class="stack-sm"><span class="badge">Licensed service</span><h2>Customs Brokerage</h2></div>
+      <div class="body"><p class="lede">As a licensed customs broker, we clear goods through all Liberian seaports and Roberts International Airport for import and export.</p><ul class="deliver"><li>Import clearance</li><li>Export clearance</li><li>Documentation and declarations</li><li>Duty and tariff guidance</li><li>Port and airport coordination</li><li>Shipment status updates</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="gold">
+      <div class="stack-sm"><span class="badge">Licensed service</span><h2>Gold Brokerage</h2></div>
+      <div class="body"><p class="lede">Under our government-issued gold brokers licence, we purchase gold for resale and export through lawful, documented channels.</p><ul class="deliver"><li>Purchase for resale</li><li>Export facilitation</li><li>Documentation</li><li>Licensed, lawful channels</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="consulting">
+      <div class="stack-sm"><span class="eyebrow">Advisory</span><h2>Consulting &amp; Advisory</h2></div>
+      <div class="body"><p class="lede">We advise on how studies are designed, run and evaluated, drawing on long experience with national surveys and donor-funded programmes.</p><ul class="deliver"><li>Study and survey design</li><li>Sampling strategy</li><li>Monitoring and evaluation frameworks</li><li>Tool and questionnaire review</li><li>Technical review of reports</li><li>Capacity building</li></ul></div>
+    </article>
+    <article class="svc-detail rv" id="trade">
+      <div class="stack-sm"><span class="eyebrow">Trade</span><h2>Business Development &amp; Trade</h2></div>
+      <div class="body"><p class="lede">We help organisations entering or growing in Liberia find partners, understand procurement and set up operations.</p><ul class="deliver"><li>Market entry support</li><li>Partner and supplier sourcing</li><li>Procurement navigation</li><li>Local logistics coordination</li></ul></div>
+    </article>
   </div>
-</div>
-
-<div id="footerPlaceholder"></div>
-<script src="shared.js"></script>
-<script>injectNav('services.html'); injectFooter(); initReveal();</script>
+</section>
+<section class="cta-band"><div class="wrap"><h2>Planning a survey, a map or a shipment?</h2><a class="btn navyb" href="contact.html">Talk to our team</a></div></section>
+<footer>
+  <div class="wrap foot">
+    <div class="stack-sm"><img src="assets/logo-dark.svg" alt="All Your Needs, where necessity meets innovation" width="260" height="60"><p>A Liberian professional services firm for survey, GIS, digital data, customs and gold brokerage.</p></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="team.html">Team</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html#survey">Survey &amp; data</a></li><li><a href="services.html#gis">GIS &amp; spatial</a></li><li><a href="services.html#resettlement">Resettlement data</a></li><li><a href="services.html#customs">Customs brokerage</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>+231 777 969 916</li><li>info@aynlr.com</li><li>Monrovia, Liberia</li></ul></div>
+  </div>
+  <div class="wrap foot-bar"><span>© 2026 All Your Needs Incorporated</span><span>www.aynlr.com</span></div>
+</footer>
+<script src="assets/counties.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>

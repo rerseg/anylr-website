@@ -1,243 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Contact All Your Needs — Monrovia, Liberia. Survey data services, GIS, customs brokerage, gold brokerage, and consulting.">
-<title>Contact | All Your Needs — Monrovia, Liberia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · All Your Needs</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="RERII">
+<meta name="description" content="Contact All Your Needs Incorporated in Monrovia, Liberia.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-.contact-section { padding: var(--section-pad); background: var(--navy); position: relative; }
-.contact-section::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--gold); }
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
-.contact-info-title { font-family:var(--font-display); font-size:clamp(28px,3.5vw,46px); font-weight:700; color:var(--white); margin-bottom:20px; line-height:1.15; }
-.contact-info-title em { color:var(--gold); font-style:italic; }
-.contact-info-body { font-size:15px; line-height:1.8; color:rgba(255,255,255,0.65); margin-bottom:40px; }
-.contact-details { display:flex; flex-direction:column; gap:20px; margin-bottom:40px; }
-.contact-detail { display:flex; align-items:flex-start; gap:16px; }
-.contact-icon { width:48px; height:48px; background:rgba(245,166,35,0.1); border:1px solid rgba(245,166,35,0.25); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:20px; }
-.contact-label { font-family:var(--font-label); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
-.contact-value { font-size:15px; color:var(--white); font-weight:500; }
-.contact-value a { color:var(--white); text-decoration:none; transition:color 0.2s; }
-.contact-value a:hover { color:var(--gold); }
-.promise-box { background:rgba(245,166,35,0.08); border:1px solid rgba(245,166,35,0.2); border-radius:10px; padding:24px; display:flex; gap:16px; align-items:flex-start; }
-.promise-box-icon { font-size:24px; flex-shrink:0; }
-.promise-title { font-size:15px; font-weight:600; color:var(--white); margin-bottom:4px; }
-.promise-text { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; }
-.form-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:44px; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.form-group { margin-bottom:20px; }
-.form-label { display:block; font-size:11px; font-weight:600; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; font-family:var(--font-label); }
-.form-input, .form-select, .form-textarea { width:100%; padding:13px 16px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:6px; font-size:14.5px; color:var(--white); font-family:var(--font-body); transition:border-color 0.2s; outline:none; }
-.form-input::placeholder, .form-textarea::placeholder { color:rgba(255,255,255,0.3); }
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--gold); background:rgba(255,255,255,0.08); }
-.form-select option { background:var(--navy); color:var(--white); }
-.form-textarea { resize:vertical; min-height:130px; }
-.form-submit { width:100%; padding:16px; background:var(--gold); color:var(--navy); border:none; border-radius:6px; font-size:15px; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:var(--transition); }
-.form-submit:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,166,35,0.3); }
-.thank-you { display:none; text-align:center; padding:60px 20px; }
-.thank-you-icon { font-size:52px; margin-bottom:16px; }
-.thank-you-title { font-family:var(--font-display); font-size:32px; font-weight:700; color:var(--white); margin-bottom:12px; }
-.thank-you-text { font-size:15px; color:rgba(255,255,255,0.6); line-height:1.7; }
-.services-strip { padding:60px 24px; background:var(--off-white); }
-.services-strip-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:40px; }
-.service-chip { background:var(--white); border:1px solid var(--border); border-radius:8px; padding:20px 16px; text-align:center; transition:var(--transition); }
-.service-chip:hover { border-color:var(--gold); transform:translateY(-3px); box-shadow:0 8px 24px rgba(26,43,74,0.08); }
-.service-chip-icon { font-size:24px; display:block; margin-bottom:10px; }
-.service-chip-name { font-size:13px; font-weight:600; color:var(--navy); line-height:1.3; }
-@media(max-width:900px) {
-  .contact-grid { grid-template-columns:1fr; gap:48px; }
-  .form-row { grid-template-columns:1fr; }
-  .services-strip-grid { grid-template-columns:repeat(2,1fr); }
-}
-@media(max-width:600px) {
-  .services-strip-grid { grid-template-columns:1fr 1fr; }
-  .form-card { padding:28px 20px; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div id="navPlaceholder"></div>
-
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Contact</span>
-    </div>
-    <span class="page-hero-label">Get In Touch</span>
-    <h1 class="page-hero-title">Let's Work<br><em>Together</em></h1>
-    <p class="page-hero-sub">Tell us about your project and we will respond within 24 hours. Whatever your operational requirement in Liberia — we are your partner.</p>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="All Your Needs, home">
+      <svg viewBox="-42 -50 84 98" aria-hidden="true"><defs><linearGradient id="hRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E8FE1"/><stop offset="1" stop-color="#0055A5"/></linearGradient><linearGradient id="hSw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB830"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><ellipse rx="36" ry="42" fill="none" stroke="url(#hRing)" stroke-width="5"/><ellipse rx="28" ry="33" fill="none" stroke="#0077C8" stroke-width="1.5" opacity=".4"/><path d="M -38 18 C -50 -5, -30 -50, 5 -44 C 20 -41, 32 -30, 38 -14" fill="none" stroke="url(#hSw)" stroke-width="6" stroke-linecap="round"/><g stroke="#fff" stroke-linecap="round"><line x1="-13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="-7.5" y1="6" x2="7.5" y2="6" stroke-width="4"/></g></svg>
+      <span><b>ALL YOUR NEEDS</b><small>WHERE NECESSITY MEETS INNOVATION</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html" class="cta" aria-current="page">Start a project</a>
+    </nav>
   </div>
-</div>
-
-<section class="contact-section">
-  <div class="container">
-    <div class="contact-grid">
-
-      <div class="reveal">
-        <h2 class="contact-info-title">Reach Us <em>Directly</em></h2>
-        <p class="contact-info-body">We are a responsive team. Whether you need a proposal, a quote for customs clearance, or just want to understand if we can help with your project — reach out and we will get back to you same day.</p>
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-icon">📞</div>
-            <div>
-              <div class="contact-label">Phone</div>
-              <div class="contact-value"><a href="tel:+231777969916">+231 777 969 916</a></div>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">✉️</div>
-            <div>
-              <div class="contact-label">General Inquiries</div>
-              <div class="contact-value"><a href="mailto:info@aynlr.com">info@aynlr.com</a></div>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">👤</div>
-            <div>
-              <div class="contact-label">Managing Director — Direct</div>
-              <div class="contact-value"><a href="mailto:rerii@aynlr.com">rerii@aynlr.com</a></div>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">📍</div>
-            <div>
-              <div class="contact-label">Location</div>
-              <div class="contact-value">Monrovia, Montserrado County<br>Republic of Liberia</div>
-            </div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-icon">🌐</div>
-            <div>
-              <div class="contact-label">Website</div>
-              <div class="contact-value"><a href="https://www.aynlr.com">www.aynlr.com</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="promise-box">
-          <div class="promise-box-icon">⚡</div>
-          <div>
-            <div class="promise-title">24-Hour Response Guarantee</div>
-            <div class="promise-text">We respond to all project inquiries within 24 hours on business days. For urgent customs clearance matters — call us directly.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-2">
-        <div class="form-card">
-          <div id="contactForm">
-            <div style="margin-bottom:28px;">
-              <div style="font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--white);margin-bottom:6px;">Send Us a Message</div>
-              <div style="font-size:13.5px;color:rgba(255,255,255,0.45);">Fill in the form and we will be in touch shortly.</div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">First Name</label>
-                <input type="text" class="form-input" placeholder="First name">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Last Name</label>
-                <input type="text" class="form-input" placeholder="Last name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Organisation / Company</label>
-              <input type="text" class="form-input" placeholder="Your organisation">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address</label>
-              <input type="email" class="form-input" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Phone Number (optional)</label>
-              <input type="tel" class="form-input" placeholder="+231...">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Service of Interest</label>
-              <select class="form-select form-input">
-                <option value="" disabled selected>Select a service</option>
-                <option>Survey &amp; Data Collection</option>
-                <option>GIS &amp; Spatial Data Services</option>
-                <option>Resettlement Data Management</option>
-                <option>Digital Data Solutions</option>
-                <option>Customs Brokerage</option>
-                <option>Gold Brokerage</option>
-                <option>Consulting &amp; Advisory</option>
-                <option>Business Development &amp; Trade</option>
-                <option>Multiple Services</option>
-                <option>Sub-contracting / Partnership</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Tell Us About Your Project</label>
-              <textarea class="form-textarea" placeholder="Brief description of your project, timeline, location, and any specific requirements..."></textarea>
-            </div>
-            <button class="form-submit" onclick="submitForm()">Send Inquiry &rarr;</button>
-          </div>
-          <div class="thank-you" id="thankYou">
-            <div class="thank-you-icon">✅</div>
-            <div class="thank-you-title">Message Received</div>
-            <p class="thank-you-text">Thank you for reaching out to All Your Needs. We have received your inquiry and will respond to you within 24 hours at the email address you provided.</p>
-            <a href="index.html" class="btn btn-primary" style="margin-top:28px;">Back to Home</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <div class="stack-sm hero-load"><span class="crumb">Contact</span><h1>Tell us <em>what you need.</em></h1><p>Send a short description of your project and the right person on our team will get back to you.</p></div>
+    <svg class="head-map" viewBox="0 0 440 440" aria-hidden="true" data-highlight="Montserrado"></svg>
   </div>
 </section>
-
-<!-- SERVICES REMINDER -->
-<section class="services-strip">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:560px;margin:0 auto 0;">
-      <span class="label">What We Offer</span>
-      <h2 class="section-title">Not Sure Which Service You Need?</h2>
-      <p class="section-body">Tell us about your project and we will advise on the right approach. No obligation, no pressure.</p>
+<section class="navy pad contact">
+  <div class="wrap contact-grid">
+    <div class="rv">
+      <span class="eyebrow">Reach us directly</span>
+      <dl>
+        <div><dt>Phone</dt><dd><span>+231 777 969 916</span><button class="copy" type="button" data-copy="+231 777 969 916">Copy</button></dd></div>
+        <div><dt>Email</dt><dd><span>info@aynlr.com</span><button class="copy" type="button" data-copy="info@aynlr.com">Copy</button></dd></div>
+        <div><dt>Office</dt><dd>Monrovia, Montserrado County, Republic of Liberia</dd></div>
+      </dl>
     </div>
-    <div class="services-strip-grid">
-      <a href="services.html#survey" class="service-chip reveal reveal-delay-1"><span class="service-chip-icon">📊</span><span class="service-chip-name">Survey &amp; Data Collection</span></a>
-      <a href="services.html#gis" class="service-chip reveal reveal-delay-2"><span class="service-chip-icon">🗺️</span><span class="service-chip-name">GIS &amp; Spatial Mapping</span></a>
-      <a href="services.html#resettlement" class="service-chip reveal reveal-delay-3"><span class="service-chip-icon">🏗️</span><span class="service-chip-name">Resettlement Data</span></a>
-      <a href="services.html#customs" class="service-chip reveal reveal-delay-4"><span class="service-chip-icon">🛃</span><span class="service-chip-name">Customs Brokerage</span></a>
-      <a href="services.html#gold" class="service-chip reveal reveal-delay-1"><span class="service-chip-icon">🥇</span><span class="service-chip-name">Gold Brokerage</span></a>
-      <a href="services.html#digital" class="service-chip reveal reveal-delay-2"><span class="service-chip-icon">📱</span><span class="service-chip-name">Digital Data Solutions</span></a>
-      <a href="services.html#consulting" class="service-chip reveal reveal-delay-3"><span class="service-chip-icon">💼</span><span class="service-chip-name">Consulting &amp; Advisory</span></a>
-      <a href="services.html#consulting" class="service-chip reveal reveal-delay-4"><span class="service-chip-icon">🤝</span><span class="service-chip-name">Business Development</span></a>
-    </div>
+    <form id="contactForm" class="rv" novalidate>
+      <div class="row2">
+        <label for="f-name">Full name<input id="f-name" name="name" required autocomplete="name"></label>
+        <label for="f-org">Organisation<input id="f-org" name="organisation" autocomplete="organization"></label>
+      </div>
+      <div class="row2">
+        <label for="f-email">Email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+        <label for="f-svc">Service of interest<select id="f-svc" name="service"><option>Survey &amp; Data Collection</option><option>GIS &amp; Spatial Data</option><option>Resettlement Data Management</option><option>Digital Data Solutions</option><option>Customs Brokerage</option><option>Gold Brokerage</option><option>Consulting &amp; Advisory</option><option>Business Development &amp; Trade</option><option>Something else</option></select></label>
+      </div>
+      <label for="f-msg">Project description<textarea id="f-msg" name="message"></textarea></label>
+      <button class="btn gold" type="submit">Send enquiry</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
   </div>
 </section>
-
-<div id="footerPlaceholder"></div>
-<script src="shared.js"></script>
-<script>
-injectNav('contact.html'); injectFooter(); initReveal();
-async function submitForm(){
-  const form = document.getElementById('contactForm');
-  const thanks = document.getElementById('thankYou');
-  const btn = form.querySelector('.form-submit');
-  const origText = btn.textContent;
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-  const inputs = form.querySelectorAll('input,select,textarea');
-  const labels = form.querySelectorAll('.form-label');
-  const data = {};
-  inputs.forEach((el,i) => { if(labels[i]) data[labels[i].textContent.trim()] = el.value; });
-  try {
-    const res = await fetch('https://formspree.io/f/mlgpwqzd', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(data)
-    });
-    if(res.ok){ form.style.display='none'; thanks.style.display='block'; }
-    else { btn.textContent = origText; btn.disabled = false; alert('Something went wrong. Email us at rerii@aynlr.com'); }
-  } catch(e) { btn.textContent = origText; btn.disabled = false; alert('Connection error. Email rerii@aynlr.com directly.'); }
-}
-</script>
+<section class="pad">
+  <div class="wrap">
+    <div class="stack-sm rv" style="margin-bottom:32px"><span class="eyebrow">Questions</span><h2>Frequently asked.</h2></div>
+    <div class="faq"><details><summary>Where do you operate?</summary><p>Our survey and data operations cover all 15 counties of Liberia. Our leadership has also delivered engagements in the DRC, Zambia and Angola, and we are available for sub-contracts across West and Central Africa.</p></details><details><summary>Who are your typical clients?</summary><p>UN agencies, international development finance institutions, Liberian government ministries and agencies, international NGOs, environmental and social consultancies, infrastructure developers and private companies working in Liberia.</p></details><details><summary>Is All Your Needs a registered Liberian company?</summary><p>Yes. All Your Needs Incorporated is incorporated in the Republic of Liberia and holds government-issued licences for customs brokerage and gold brokerage.</p></details><details><summary>Can you manage data collection outside Liberia?</summary><p>Yes. Our leadership has managed data collection and resettlement data engagements in the DRC, Zambia and Angola.</p></details><details><summary>Can you clear goods at any Liberian port?</summary><p>Yes. Our customs brokers licence covers all Liberian seaports and Roberts International Airport, for import and export.</p></details></div>
+  </div>
+</section>
+<footer>
+  <div class="wrap foot">
+    <div class="stack-sm"><img src="assets/logo-dark.svg" alt="All Your Needs, where necessity meets innovation" width="260" height="60"><p>A Liberian professional services firm for survey, GIS, digital data, customs and gold brokerage.</p></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="team.html">Team</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html#survey">Survey &amp; data</a></li><li><a href="services.html#gis">GIS &amp; spatial</a></li><li><a href="services.html#resettlement">Resettlement data</a></li><li><a href="services.html#customs">Customs brokerage</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>+231 777 969 916</li><li>info@aynlr.com</li><li>Monrovia, Liberia</li></ul></div>
+  </div>
+  <div class="wrap foot-bar"><span>© 2026 All Your Needs Incorporated</span><span>www.aynlr.com</span></div>
+</footer>
+<script src="assets/counties.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>

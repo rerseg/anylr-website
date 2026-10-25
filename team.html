@@ -1,260 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Meet the All Your Needs team — experienced Liberian professionals in data, GIS, finance, logistics, and operations.">
-<title>Our Team | All Your Needs — Monrovia, Liberia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Team · All Your Needs</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="RERII">
+<meta name="description" content="The leadership team of All Your Needs Incorporated.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-.team-intro { padding: var(--section-pad); background: var(--white); }
-.team-section { padding: var(--section-pad); background: var(--off-white); }
-.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 60px; }
-.team-card-full { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); transition: var(--transition); display: grid; grid-template-columns: 180px 1fr; }
-.team-card-full:hover { box-shadow: 0 16px 48px rgba(26,43,74,0.12); transform: translateY(-3px); }
-.team-avatar-full { background: linear-gradient(160deg, var(--navy) 0%, #1E3A6E 100%); display: flex; align-items: center; justify-content: center; position: relative; flex-direction: column; padding: 32px 20px; }
-.team-avatar-initials-full { font-family: var(--font-display); font-size: 52px; font-weight: 700; color: var(--white); opacity: 0.9; line-height: 1; }
-.team-avatar-accent-full { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-.team-info-full { padding: 32px; }
-.team-name-full { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.team-title-full { font-family: var(--font-label); font-size: 11px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; font-weight: 700; margin-bottom: 16px; display: block; }
-.team-bio-full { font-size: 14px; line-height: 1.75; color: #4A5568; margin-bottom: 16px; }
-.team-skills { display: flex; flex-wrap: wrap; gap: 6px; }
-.team-skill { background: var(--off-white); border: 1px solid var(--border); border-radius: 4px; padding: 3px 10px; font-size: 11.5px; color: var(--navy); font-weight: 500; }
-
-/* Leadership highlight */
-.leadership-intro { padding: 80px 24px 0; background: var(--off-white); }
-
-/* Join section */
-.join { padding: var(--section-pad); background: var(--navy); position: relative; }
-.join::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-.join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-
-@media (max-width: 900px) {
-  .team-grid { grid-template-columns: 1fr; }
-  .team-card-full { grid-template-columns: 140px 1fr; }
-  .join-grid { grid-template-columns: 1fr; gap: 40px; }
-}
-@media (max-width: 600px) {
-  .team-card-full { grid-template-columns: 1fr; }
-  .team-avatar-full { min-height: 120px; }
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div id="navPlaceholder"></div>
-
-<!-- HERO -->
-<div class="page-hero">
-  <div class="page-hero-inner">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">Our Team</span>
-    </div>
-    <span class="page-hero-label">The People Behind The Work</span>
-    <h1 class="page-hero-title">Experienced.<br><em>Accountable. Local.</em></h1>
-    <p class="page-hero-sub">Our team combines decades of technical expertise with deep knowledge of Liberia's professional landscape — from national census operations to customs law to financial management.</p>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="All Your Needs, home">
+      <svg viewBox="-42 -50 84 98" aria-hidden="true"><defs><linearGradient id="hRing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E8FE1"/><stop offset="1" stop-color="#0055A5"/></linearGradient><linearGradient id="hSw" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB830"/><stop offset="1" stop-color="#E08A00"/></linearGradient></defs><ellipse rx="36" ry="42" fill="none" stroke="url(#hRing)" stroke-width="5"/><ellipse rx="28" ry="33" fill="none" stroke="#0077C8" stroke-width="1.5" opacity=".4"/><path d="M -38 18 C -50 -5, -30 -50, 5 -44 C 20 -41, 32 -30, 38 -14" fill="none" stroke="url(#hSw)" stroke-width="6" stroke-linecap="round"/><g stroke="#fff" stroke-linecap="round"><line x1="-13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="13" y1="22" x2="0" y2="-20" stroke-width="5.5"/><line x1="-7.5" y1="6" x2="7.5" y2="6" stroke-width="4"/></g></svg>
+      <span><b>ALL YOUR NEEDS</b><small>WHERE NECESSITY MEETS INNOVATION</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="team.html" aria-current="page">Team</a>
+      <a href="contact.html" class="cta">Start a project</a>
+    </nav>
   </div>
-</div>
-
-<!-- INTRO -->
-<section class="team-intro">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="reveal">
-      <div>
-        <span class="label">Our People</span>
-        <h2 class="section-title">A Team Built for Liberia's Most Demanding Projects</h2>
-        <p class="section-body">All Your Needs brings together professionals who have collectively contributed to virtually every major national survey, census, and development programme in Liberia over the past two decades.</p>
-        <p class="section-body">Our team has worked directly with UNICEF, UNFPA, the World Bank, the African Development Bank, the EU, the Ministry of Health, and the Government of Liberia — giving every client immediate access to a network built over 40 years of professional practice.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div style="background:var(--navy);border-radius:10px;padding:28px;text-align:center;">
-          <div style="font-family:var(--font-display);font-size:44px;font-weight:700;color:var(--gold);">8</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;">Core Team Members</div>
-        </div>
-        <div style="background:var(--off-white);border-radius:10px;padding:28px;text-align:center;">
-          <div style="font-family:var(--font-display);font-size:44px;font-weight:700;color:var(--navy);">40+</div>
-          <div style="font-size:13px;color:var(--grey);margin-top:6px;">Combined Years Experience</div>
-        </div>
-        <div style="background:var(--off-white);border-radius:10px;padding:28px;text-align:center;">
-          <div style="font-family:var(--font-display);font-size:44px;font-weight:700;color:var(--navy);">5+</div>
-          <div style="font-size:13px;color:var(--grey);margin-top:6px;">Professional Disciplines</div>
-        </div>
-        <div style="background:var(--navy);border-radius:10px;padding:28px;text-align:center;">
-          <div style="font-family:var(--font-display);font-size:44px;font-weight:700;color:var(--gold);">2</div>
-          <div style="font-size:13px;color:rgba(255,255,255,0.6);margin-top:6px;">Licensed Services</div>
-        </div>
-      </div>
-    </div>
+</header>
+<section class="page-head">
+  <div class="wrap">
+    <div class="stack-sm hero-load"><span class="crumb">Team</span><h1>The people <em>behind the work.</em></h1><p>A leadership team with long experience in statistics, GIS, technology, finance and operations. Hover over or tap a card to read more.</p></div>
+    <svg class="head-map" viewBox="0 0 440 440" aria-hidden="true"></svg>
   </div>
 </section>
-
-<!-- TEAM -->
-<section class="team-section">
-  <div class="container">
-    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto 0;">
-      <span class="label">Meet The Team</span>
-      <h2 class="section-title">Our Leadership & Specialists</h2>
-    </div>
+<section class="pad">
+  <div class="wrap">
     <div class="team-grid">
-
-      <div class="team-card-full reveal reveal-delay-1">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">JN</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Joseph W. Nyan</div>
-          <span class="team-title-full">Chief Executive Officer</span>
-          <p class="team-bio-full">Over 40 years of experience in statistical data processing, systems programming, and large-scale survey management. Holds an MSc in Computer Science with Distinction from the New York Institute of Technology (1985) and is a US Census Bureau-certified CSPro specialist. Has led data processing for every major Liberian national census and survey since 1999 and has provided technical assistance across Africa for UNICEF, UNFPA, WFP, and the World Bank.</p>
-          <div class="team-skills">
-            <span class="team-skill">CSPro</span><span class="team-skill">SPSS</span><span class="team-skill">Stata</span><span class="team-skill">COBOL</span><span class="team-skill">Census Management</span><span class="team-skill">Systems Programming</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-2">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">RR</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Richard E. Russ II</div>
-          <span class="team-title-full">Managing Director</span>
-          <p class="team-bio-full">Director of Data Processing at LISGIS with 13+ years of experience across more than 100 survey and census projects in Liberia and the sub-region. Deep expertise in CSPro, KoboCollect, ArcGIS Pro, SPSS, and PostgreSQL. Has managed data for projects funded by the World Bank, AfDB, EU, UNICEF, UNFPA, WFP, Ministry of Health, and the National Elections Commission. Holds a Customs Brokers Licence and Gold Brokers Licence.</p>
-          <div class="team-skills">
-            <span class="team-skill">CSPro</span><span class="team-skill">KoboCollect</span><span class="team-skill">ArcGIS Pro</span><span class="team-skill">SPSS</span><span class="team-skill">PostgreSQL</span><span class="team-skill">Customs Licensed</span><span class="team-skill">Gold Licensed</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-1">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">MK</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Mulbah K.A. Kromah</div>
-          <span class="team-title-full">Technical Director</span>
-          <p class="team-bio-full">Holds a Master's degree in Statistics. Brings deep expertise in statistical methodology, survey design, and quantitative analysis. Provides technical oversight for the company's data and survey engagements, ensuring methodological rigour and compliance with international standards across all client projects.</p>
-          <div class="team-skills">
-            <span class="team-skill">Statistics</span><span class="team-skill">Survey Design</span><span class="team-skill">Quantitative Analysis</span><span class="team-skill">Methodology</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-2">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">AS</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Abraham Saar</div>
-          <span class="team-title-full">GIS Specialist</span>
-          <p class="team-bio-full">Six years of experience in geographic information systems, spatial data analysis, and field mapping. Proficient in ArcGIS Pro and QGIS. Specialist in EA boundary delineation, structure digitisation, satellite imagery analysis, and the production of field map packages for survey and development projects across all of Liberia.</p>
-          <div class="team-skills">
-            <span class="team-skill">ArcGIS Pro</span><span class="team-skill">QGIS</span><span class="team-skill">EA Delineation</span><span class="team-skill">Satellite Imagery</span><span class="team-skill">Field Mapping</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-1">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">BW</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Boye T. Wright</div>
-          <span class="team-title-full">Finance & Accounts Manager</span>
-          <p class="team-bio-full">Holds a Bachelor's degree in Accounting with a minor in Business Management, supported by professional certificates in Banking and Finance. Responsible for all financial management, accounting operations, budgeting, and financial reporting across the company's service lines and client engagements.</p>
-          <div class="team-skills">
-            <span class="team-skill">Accounting</span><span class="team-skill">Financial Management</span><span class="team-skill">Banking & Finance</span><span class="team-skill">Budgeting</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-2">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">PJ</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Peter Johnson</div>
-          <span class="team-title-full">Director of Logistics & Assets</span>
-          <p class="team-bio-full">Twenty years of experience in logistics management and heavy machinery operations. Oversees all company logistics coordination, equipment management, and supply chain activities — ensuring smooth operational delivery across the company's diverse service portfolio.</p>
-          <div class="team-skills">
-            <span class="team-skill">Logistics Management</span><span class="team-skill">Heavy Machinery</span><span class="team-skill">Supply Chain</span><span class="team-skill">Asset Management</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-1">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">MB</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Mohammed S. Bah</div>
-          <span class="team-title-full">Lead, IT & Project Management</span>
-          <p class="team-bio-full">Expert in information technology and technology-driven project management. Leads the company's IT infrastructure advisory and custom application development engagements. Ensures technical solutions are delivered on time and to specification for clients across the public and private sector.</p>
-          <div class="team-skills">
-            <span class="team-skill">IT Infrastructure</span><span class="team-skill">Project Management</span><span class="team-skill">Application Development</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="team-card-full reveal reveal-delay-2">
-        <div class="team-avatar-full">
-          <span class="team-avatar-initials-full">WW</span>
-          <div class="team-avatar-accent-full"></div>
-        </div>
-        <div class="team-info-full">
-          <div class="team-name-full">Walid Webhe</div>
-          <span class="team-title-full">Operations & Logistics Manager</span>
-          <p class="team-bio-full">Specialist in workflow optimisation and operational logistics management. Ensures smooth coordination and execution across the company's multi-sector service portfolio — from survey field operations to customs clearance logistics and trade facilitation engagements.</p>
-          <div class="team-skills">
-            <span class="team-skill">Operations Management</span><span class="team-skill">Workflow Optimisation</span><span class="team-skill">Logistics Coordination</span>
-          </div>
-        </div>
-      </div>
-
+      <div class="person rv" tabindex="0"><div class="face"><span>JN</span></div><div class="meta"><b>Joseph W. Nyan</b><span class="role">Chief Executive Officer</span></div><div class="bio"><b>Joseph W. Nyan</b><p>Sets company direction and leads relationships with clients and partners.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>RR</span></div><div class="meta"><b>Richard Emmett Russ II</b><span class="role">Managing Director</span></div><div class="bio"><b>Richard Emmett Russ II</b><p>Leads the day-to-day management of the company and its projects.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>MK</span></div><div class="meta"><b>Mulbah K.A. Kromah</b><span class="role">Technical Director</span></div><div class="bio"><b>Mulbah K.A. Kromah</b><p>Oversees technical quality across survey, data and spatial work.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>BW</span></div><div class="meta"><b>Boye T. Wright</b><span class="role">Finance Manager</span></div><div class="bio"><b>Boye T. Wright</b><p>Manages budgets, financial reporting and compliance.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>WW</span></div><div class="meta"><b>Walid Wehbe</b><span class="role">Operations Manager</span></div><div class="bio"><b>Walid Wehbe</b><p>Coordinates logistics, field operations and project schedules.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>MB</span></div><div class="meta"><b>Mohammed S. Bah</b><span class="role">Lead ICT / Developer</span></div><div class="bio"><b>Mohammed S. Bah</b><p>Builds and maintains AYN's software, dashboards and data systems.</p></div></div><div class="person rv" tabindex="0"><div class="face"><span>AS</span></div><div class="meta"><b>Abraham H. Saar</b><span class="role">GIS Specialist</span></div><div class="bio"><b>Abraham H. Saar</b><p>Produces maps, boundary files and spatial analysis.</p></div></div>
     </div>
   </div>
 </section>
-
-<!-- JOIN -->
-<section class="join">
-  <div class="container">
-    <div class="join-grid">
-      <div class="reveal">
-        <span class="label" style="color:var(--gold);">Join Our Team</span>
-        <h2 class="section-title" style="color:var(--white);">We Are Always Looking for Talented Liberians</h2>
-        <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.65);margin-bottom:32px;">All Your Needs is committed to building Liberian professional capacity. If you are an experienced professional in data, GIS, finance, logistics, IT, or consulting — we want to hear from you.</p>
-        <a href="mailto:rerii@aynlr.com?subject=CV%20Application%20%E2%80%94%20All%20Your%20Needs&body=Dear%20Richard%2C%0A%0APlease%20find%20attached%20my%20CV.%0A%0AName%3A%0APosition%20of%20Interest%3A%0ABrief%20Introduction%3A" class="btn btn-primary">Send Your CV &rarr;</a>
-      </div>
-      <div class="reveal reveal-delay-2" style="display:flex;flex-direction:column;gap:16px;">
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
-          <span style="font-size:24px;">📊</span>
-          <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">Data & Survey Professionals</div><div style="font-size:13px;color:rgba(255,255,255,0.5);">CSPro, KoboCollect, SPSS, field team management</div></div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
-          <span style="font-size:24px;">🗺️</span>
-          <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">GIS Specialists</div><div style="font-size:13px;color:rgba(255,255,255,0.5);">ArcGIS Pro, QGIS, spatial analysis, field mapping</div></div>
-        </div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:24px;display:flex;gap:16px;align-items:flex-start;">
-          <span style="font-size:24px;">💻</span>
-          <div><div style="font-size:15px;font-weight:600;color:var(--white);margin-bottom:4px;">IT & Software Professionals</div><div style="font-size:13px;color:rgba(255,255,255,0.5);">Web development, database design, application development</div></div>
-        </div>
-      </div>
-    </div>
+<section class="navy pad">
+  <div class="wrap two">
+    <div class="stack-sm rv"><span class="eyebrow">Specialists</span><h2>Expertise for every engagement.</h2></div>
+    <p class="lede rv">Our core team is supported by specialists in finance and gender, and by experienced field supervisors and enumerators across the country, brought together for each project as the work requires.</p>
   </div>
 </section>
-
-<div id="footerPlaceholder"></div>
-<script src="shared.js"></script>
-<script>injectNav('team.html'); injectFooter(); initReveal();</script>
+<section class="cta-band"><div class="wrap"><h2>Planning a survey, a map or a shipment?</h2><a class="btn navyb" href="contact.html">Talk to our team</a></div></section>
+<footer>
+  <div class="wrap foot">
+    <div class="stack-sm"><img src="assets/logo-dark.svg" alt="All Your Needs, where necessity meets innovation" width="260" height="60"><p>A Liberian professional services firm for survey, GIS, digital data, customs and gold brokerage.</p></div>
+    <div><h4>Company</h4><ul><li><a href="about.html">About us</a></li><li><a href="team.html">Team</a></li><li><a href="case-studies.html">Case studies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h4>Services</h4><ul><li><a href="services.html#survey">Survey &amp; data</a></li><li><a href="services.html#gis">GIS &amp; spatial</a></li><li><a href="services.html#resettlement">Resettlement data</a></li><li><a href="services.html#customs">Customs brokerage</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>+231 777 969 916</li><li>info@aynlr.com</li><li>Monrovia, Liberia</li></ul></div>
+  </div>
+  <div class="wrap foot-bar"><span>© 2026 All Your Needs Incorporated</span><span>www.aynlr.com</span></div>
+</footer>
+<script src="assets/counties.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
